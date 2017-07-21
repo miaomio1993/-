@@ -33,8 +33,8 @@
 				<a href="#/forgetpassword" v-on:click="change2">忘记密码?</a>
 			</li>
 			<li>
-        <a href="#/phoneconfirm" v-on:click="change">登录</a>
-        <a href="#/applyfor" v-on:click="change1">会员注册</a>
+        <a href="#/phoneconfirm" v-on:click="change">会员登录</a>
+        <a href="#/applyfor" v-on:click="change1">注册</a>
 			</li>
 			<li>
 				<p>提示：未注册用户将直接注册成为礼拜五用户</p>
@@ -54,6 +54,9 @@
 		methods:{
 			change:function(){
 				this.$root.$emit("listen","会员登录")
+        $.ajax({
+
+        })
 
 			},
 			change1:function(){
