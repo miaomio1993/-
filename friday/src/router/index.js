@@ -84,7 +84,7 @@ export default new Router({
       component: Pageindex,
       children:[
         {
-          path: '/',
+          path: '/index/',
           name: 'Indexmain',
           component: Indexmain,
           children:[
@@ -255,12 +255,12 @@ export default new Router({
           ]
         },
         {
-          path: '/shoppingcar',
+          path: '/index/shoppingcar',
           name: 'Shoppingcar',
           component: Shoppingcar,
         },
         {
-          path: '/register',
+          path: '/index/register',
           name: 'Register',
           component: Register,
           children:[
@@ -294,7 +294,7 @@ export default new Router({
           ]
         },
         {
-          path: '/login',
+          path: '/index/login',
           name: 'Register',
           component: Register,
           children:[

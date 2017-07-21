@@ -116,7 +116,7 @@
         		change:function(index1,index){
         			this.num1 = index1;
         			this.num = index
-        			
+
         		}
         }
 //      components:{
@@ -126,7 +126,7 @@
 //      		Scoreorder:Scoreorder,
 //      		Mymoney:Mymoney,
 //      		Peopledata:Peopledata
-//      		
+//
 //      }
     }
 </script>

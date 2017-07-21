@@ -3,24 +3,24 @@
 	<div class="z-m-head">
 		<div class="z-m-l">
 			<img src="./img/myaccound2.png"/>
-			<p>您好，<span>136****2356</span></p>
-			
+			<p>您好，<span></span></p>
+
 		</div>
 		<ul>
 			<li>
 				<p>当前积分</p>
-				<i>124</i>
+				<i>{{score}}</i>
 			</li>
 			<li>
 				<p><a href="#/bill">我的钱包</a></p>
-				<i>¥1220.0</i>
+				<i>{{money}}</i>
 			</li>
 			<li>
 				<p><a href="#/mymoney">充值有礼>></a></p>
 				<i><a href="#/cardchange">充值卡兑换>></a></i>
 			</li>
 		</ul>
-		
+
 	</div>
 	<div class="z-m-food">
 		<img src="./img/myaccount.png"/>
@@ -31,14 +31,16 @@
 		<img src="./img/myaccound6.png"/>
 		<img src="./img/myaccound8.png"/>
 	</div>
-</div>	
+</div>
 </template>
 
 <script>
 	export default{
 		data(){
 			return{
-				
+          phoneNumber:123456789,
+          score:214,
+          money:"¥300",
 			}
 		}
 	}

@@ -92,7 +92,8 @@
                         success:function (data) {
                             console.log(data.err)
                           if (data.err==2){
-                             window.location.href = "#/users"
+                             window.location.href = "#/users/123"
+
                           }
                           if (data.err==1){
                               alert("已经注册,请直接登录")
