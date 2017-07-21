@@ -80,6 +80,7 @@
   .s-top-left>p{
     font-size: 14px;
     color: #666;
+    height: 36px;
     line-height: 36px;
   }
   .s-top-left>p>span{

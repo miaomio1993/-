@@ -23,7 +23,7 @@
       <button class="s-del" @click="del(index)">删除</button>
     </div>
     <div class="s-sum">
-      商品金额 <span>￥108.0</span>
+      商品金额 <span>￥<i>{{total}}</i></span>
     </div>
   </div>
 </template>
@@ -33,43 +33,40 @@
         name: 'Shoppingcar-head',
         data () {
             return {
-              list:[
-                {
-                  img:require('./img/shoppingcar-detail1.png'),
-                  name:"云南蒙自石榴8个装",
-                  kind:"8个装",
-                  price:569,
-                  num:1,
-                },
-                {
-                  img:require('./img/shoppingcar-detail1.png'),
-                  name:"云南蒙自石榴8个装",
-                  kind:"8个装",
-                  price:122,
-                  num:2,
-                },
-                {
-                  img:require('./img/shoppingcar-detail1.png'),
-                  name:"云南蒙自石榴8个装",
-                  kind:"8个装",
-                  price:233,
-                  num:3,
-                }
-              ]
+              total:0,
             }
+        },
+        props:{
+          list:Array,
+        },
+        created:function () {
+          for(var i=0;i<this.list.length;i++){
+            this.total+=this.list[i].num*this.list[i].price;
+          }
+          this.$root.$emit("change",this.total);
         },
         methods:{
             add:function (index) {
               this.list[index].num++;
+              this.total=0;
+              for(var i=0;i<this.list.length;i++){
+                this.total+=this.list[i].num*this.list[i].price;
+              }
+              this.$root.$emit("change",this.total);
             },
             reduce:function (index) {
               if(this.list[index].num>1){
                 this.list[index].num--;
               }
+              this.total=0;
+              for(var i=0;i<this.list.length;i++){
+                this.total+=this.list[i].num*this.list[i].price;
+              }
+              this.$root.$emit("change",this.total);
             },
             del:function (index) {
               this.list.splice(index,1);
-            }
+            },
         }
     }
 </script>
@@ -182,6 +179,17 @@
   }
   .s-sum{
     line-height: 80px;
-
+    text-align: right;
+    padding-right: 40px;
+    font-size: 20px;
+    color: #666;
+  }
+  .s-sum>span{
+    color: #ff8484;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .s-sum>span>i{
+    font-weight: bold;
   }
 </style>
