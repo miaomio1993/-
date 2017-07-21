@@ -64,7 +64,7 @@
   export default{
       methods:{
          move:function () {
-           $(".z-move").parents().find(".z-hasorder").remove()
+           $(".z-move").parents().find(".z-has").remove()
          }
       }
   }
