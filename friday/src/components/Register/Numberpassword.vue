@@ -77,10 +77,10 @@
                   alert("不存在该用户,请先注册")
                 }
                 if (data.err == 2) {
-                  window.location.href("#/users")
+                  window.location.href = "#/users"
                 }
                 if (data.err == 3) {
-                  alert("密码有误,请找回密码")
+                  alert("密码有误,请点击忘记密码")
                 }
 
               }
