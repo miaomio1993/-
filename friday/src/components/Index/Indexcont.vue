@@ -1,0 +1,188 @@
+<template>
+  <div class="s-index-cont">
+    <countlist :list="count1"></countlist>
+    <countlist :list="count2"></countlist>
+    <countlist :list="count3"></countlist>
+    <countlist :list="count4"></countlist>
+  </div>
+
+</template>
+
+<script>
+  import Countlist from './Countlist.vue'
+    export default {
+        name: 'indexcont',
+        data () {
+            return {
+              count1:{
+                title:"新鲜水果",
+                titleImg:require('./img/index-cont-title1.png'),
+                subhead:"采自新疆优质水果生产基地，品质一流",
+                target:'',
+                itemlist:[
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-1.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-2.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-3.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-4.png'),
+                  }
+                ]
+              },
+              count2:{
+                title:"水产海鲜",
+                titleImg:require('./img/index-cont-title2.png'),
+                subhead:"国内外新鲜到港的鱼虾蟹贝，我们全都有",
+                target:'',
+                itemlist:[
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-1.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-2.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-3.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-4.png'),
+                  }
+                ]
+              },
+              count3:{
+                title:"肉类禽蛋",
+                titleImg:require('./img/index-cont-title3.png'),
+                subhead:"采自新疆优质水果生产基地，品质一流",
+                target:'',
+                itemlist:[
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-1.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-2.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-3.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont1-4.png'),
+                  }
+                ]
+              },
+              count4:{
+                title:"蛋奶速食",
+                titleImg:require('./img/index-cont-title4.png'),
+                subhead:"国内外新鲜到港的鱼虾蟹贝，我们全都有",
+                target:'',
+                itemlist:[
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-1.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-2.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-3.png'),
+                  },
+                  {
+                    id:'',
+                    title:'新西兰佳沛黄金奇异果',
+                    subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+                    priceNow:28.80,
+                    priceOld:40.00,
+                    img:require('./img/index-cont2-4.png'),
+                  }
+                ]
+              }
+            }
+        },
+        components:{
+            Countlist
+        }
+    }
+</script>
+
+
+<style scoped>
+
+</style>

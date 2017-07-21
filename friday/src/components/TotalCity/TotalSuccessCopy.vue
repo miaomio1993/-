@@ -1,0 +1,84 @@
+<template>
+	<div class="g-success-box">
+			<div class="g-box">
+				<img src="./images/total-success.png" alt="" />
+				<strong>支付成功</strong>
+				<div class="g-btn">
+					<button>查看订单</button>
+					<button>返回首页</button>
+				</div>				
+				<span>订单编号：20150901144912ah4941</span>
+			</div>
+		</div>
+</template>
+
+<script>
+export default {
+  name: 'hello',
+  data () {
+    return {}
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.g-success-box{
+	position: relative;
+	height: 639px;
+	width: 1280px;
+	margin: 0 auto;
+	border-bottom:1px solid gray;
+}
+.g-success-box>.g-box{
+	padding: 150px 0;
+	width: 384px;
+	height: 340px;
+	margin: 0 auto;
+	text-align: center;
+}
+.g-success-box>.g-box>img{
+	display:block;
+	padding-left: 152px;
+	width: 80px;
+	height: 80px;
+}
+.g-success-box>.g-box>strong{
+	display:block;	
+	width: 124px;
+	height: 40px;
+	margin: 40px auto;
+	font-size: 28px;
+	line-height: 40px;
+	color:#f08200;
+}
+.g-success-box>.g-box>.g-btn{
+	padding-top: 20px;
+	width: 384px;
+	height: 45px;
+}
+.g-box>.g-btn>button{
+	width: 172px;
+	height: 45px;
+	font-size: 24px;
+	color:white;
+	border-radius: 5px;
+}
+.g-box>.g-btn>button:nth-child(1){
+	float: left;
+	background: #f08200;
+}
+.g-box>.g-btn>button:nth-child(2){
+	float: left;
+	margin-left: 40px;
+	background: #498e3d;
+}
+.g-success-box>.g-box>span{
+	display: inline-block;
+	margin-top: 55px;
+	height: 20px;
+	font-size: 16px;
+	color:#666;
+}
+
+</style>
