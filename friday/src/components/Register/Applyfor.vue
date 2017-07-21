@@ -90,10 +90,12 @@
                           passWord:passWord1
                         },
                         success:function (data) {
-                            alert()
                             console.log(data.err)
+                          if (data.err==2){
+                             window.location.href = "#/users"
+                          }
                           if (data.err==1){
-                             window.location.href = "#/"
+                              alert("已经注册,请直接登录")
                           }
                         }
                       })

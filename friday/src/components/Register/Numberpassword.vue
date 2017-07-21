@@ -9,14 +9,14 @@
 				</p>
 			</li>
 			<li>
-				<input type="number" placeholder="请输入手机号" />
+				<input type="number" placeholder="请输入手机号"  class="userPhone"/>
 				<span class="iconfont icon-duigou"></span>
 			</li>
 			<li>
-				<p><span>！</span>手机号码不正确，请重新输入</p>
+				<p v-if="turn"><span>！</span>手机号码不正确，请重新输入</p>
 			</li>
 			<li>
-				<input type="password" placeholder="密码" />
+				<input type="password" placeholder="密码" class="passWord"/>
 			</li>
 			<li>
 				<input type="text" placeholder="验证码" />
@@ -25,14 +25,14 @@
 			</li>
 			<li>
 				<p>
-					<input type="checkbox"/>
+					<input type="checkbox" class="check1"/>
 					<span>自动登录</span>
 				</p>
 				<a href="#/forgetpassword" v-on:click="change2">忘记密码?</a>
 			</li>
 			<li>
-        <a href="#/phoneconfirm" v-on:click="change">登录</a>
-        <a href="#/applyfor" v-on:click="change1">会员注册</a>
+        <a href="javascript:void(0)" v-on:click="change">会员登录</a>
+        <a href="#/applyfor" v-on:click="change1">注册</a>
 			</li>
 			<li>
 				<p>提示：未注册用户将直接注册成为礼拜五用户</p>
@@ -49,11 +49,45 @@
 
 <script>
 	export default{
+	    data(){
+	      return{
+	          turn:false
+        }
+      },
 		methods:{
-			change:function(){
-				this.$root.$emit("listen","会员登录")
+			change:function() {
+        if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+          this.turn = true
+        }else{
+          this.turn = false
+          if (!$(".check1").prop("checked")) {
+            console.log($(".check1").prop("checked"))
+            alert("点击直接登录")
+          }else{
+            this.$root.$emit("listen1", "会员登录")
+            $.ajax({
+              url: "api/log",
+              type: "get",
+              data: {
+                userPhone: $(".userPhone").val(),
+                passWord: $(".passWord").val()
+              },
+              success: function (data) {
+                if (data.err == 1) {
+                  alert("不存在该用户,请先注册")
+                }
+                if (data.err == 2) {
+                  window.location.href("#/users")
+                }
+                if (data.err == 3) {
+                  alert("密码有误,请找回密码")
+                }
 
-			},
+              }
+            })
+          }
+        }
+      },
 			change1:function(){
 				this.$root.$emit("listen1","会员注册")
 			},
@@ -109,6 +143,9 @@
 	top: 15px;
 	color: #498E3D;
 }
+.z-cont>li:nth-child(3){
+  position: absolute;
+}
 .z-cont>li:nth-child(3)>	p{
 	color: red;
 	font-size: 12px;
@@ -124,6 +161,9 @@
 	background: red;
 	display: inline-block;
 
+}
+.z-cont>li:nth-child(4){
+  margin-top: 30px;
 }
 .z-cont>li:nth-child(5)>input{
 	width: 90px;
