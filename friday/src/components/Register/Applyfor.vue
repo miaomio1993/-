@@ -82,18 +82,21 @@
                       var that = this
                       var userPhone1 = $(".userPhone").val();
                       var passWord1 = $(".passWord").val();
+
                       $.ajax({
                         url:"api/reg",
                         type:"get",
                         data:{
                           userPhone:userPhone1,
-                          passWord:passWord1
+                          passWord:passWord1,
+
                         },
                         success:function (data) {
                             console.log(data.err)
                           if (data.err==2){
-                             window.location.href = "#/users/123"
-
+                            localStorage.userPhone = userPhone1;
+                            localStorage.passWord = passWord1;
+                            window.location.href = "#/users"
                           }
                           if (data.err==1){
                               alert("已经注册,请直接登录")

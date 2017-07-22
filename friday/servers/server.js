@@ -15,7 +15,9 @@ db.connection.on("error",function (err) {
 })
 var userSchema = new mongoose.Schema({
   userPhone:{type:Number},
-  passWord:{type:String}
+  passWord:{type:String},
+  score:{type:String ,default:0},
+  money:{type:String,default:0}
 },{collection:"user"});
 
 var Model = db.model("user",userSchema );
@@ -29,7 +31,7 @@ app.get("/reg",function (req,res) {
      res.send({err:1})
 
     }else {
-      Model.create({userPhone:reqObj.userPhone,passWord:reqObj.passWord},function (err,doc) {
+      Model.create({userPhone:reqObj.userPhone,passWord:reqObj.passWord,score:0,money:0},function (err,doc) {
         if(!err){
           res.send({err:2})
         }
@@ -54,6 +56,17 @@ app.get("/log",function (req,res) {
     }else {
       res.send({err:1})
     }
+
+  })
+
+})
+
+app.get("/myaccount",function (req,res) {
+  var reqObj = req.query;
+  console.log(reqObj)
+  Model.find({userPhone:reqObj.userPhone},function (err,doc) {
+    console.log(doc)
+    res.send({score:doc[0].score,money:doc[0].money})
   })
 
 })

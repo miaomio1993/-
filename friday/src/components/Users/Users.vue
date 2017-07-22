@@ -112,6 +112,9 @@
             		]
             }
         },
+     created:function(){
+
+     },
         methods:{
         		change:function(index1,index){
         			this.num1 = index1;

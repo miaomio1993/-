@@ -3,7 +3,7 @@
 	<div class="z-m-head">
 		<div class="z-m-l">
 			<img src="./img/myaccound2.png"/>
-			<p>您好，<span></span></p>
+			<p>您好，<span>{{phoneNumber}}</span></p>
 
 		</div>
 		<ul>
@@ -42,7 +42,27 @@
           score:214,
           money:"¥300",
 			}
-		}
+		},
+    created:function () {
+          this.phoneNumber=localStorage.userPhone,
+            $.ajax({
+              url:"api/myaccount",
+              type:"get",
+              data:{
+                userPhone:localStorage.userPhone
+              },
+              success:function (data) {
+                  this.score = data.score,
+                    this.money = data.money
+              }
+            })
+
+    },
+    methods:{
+		    userphone:function (data) {
+          this.phoneNumber=data
+        }
+    }
 	}
 </script>
 
