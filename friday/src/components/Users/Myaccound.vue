@@ -9,11 +9,11 @@
 		<ul>
 			<li>
 				<p>当前积分</p>
-				<i>{{score}}</i>
+				<i>{{score}}分</i>
 			</li>
 			<li>
 				<p><a href="#/bill">我的钱包</a></p>
-				<i>{{money}}</i>
+				<i>{{money}}元</i>
 			</li>
 			<li>
 				<p><a href="#/mymoney">充值有礼>></a></p>
@@ -44,6 +44,7 @@
 			}
 		},
     created:function () {
+		      var that = this;
           this.phoneNumber=localStorage.userPhone,
             $.ajax({
               url:"api/myaccount",
@@ -52,8 +53,8 @@
                 userPhone:localStorage.userPhone
               },
               success:function (data) {
-                  this.score = data.score,
-                    this.money = data.money
+                  that.score = data.score,
+                    that.money = data.money
               }
             })
 

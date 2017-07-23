@@ -3,7 +3,7 @@
 		<div class="z-scoreorder">
 			<div class="z-header">
 				<h2>积分订单</h2>
-				<p class="z-nowscore">当前积分：<span>240分</span></p>
+				<p class="z-nowscore">当前积分：<span>{{score}}分</span></p>
 			</div>
 			<div class="z-has">
 				<p>
@@ -21,7 +21,7 @@
 						<span>x1</span>
 					</div>
 					<div class="z-price">
-						<em>积分：58</em>
+						<em>积分：{{total}}分</em>
 					</div>
 					<div class="z-look">
 						<a href="#/scoredetail" class="z-detail">查看详情</a>
@@ -39,9 +39,27 @@
 	export default{
 		data(){
 			return{
-
+        score:0,
+        total:58
 			}
 		},
+    created:function () {
+      var that = this;
+        $.ajax({
+          url:"api/scoreorder",
+          type:"get",
+          data:{
+            userPhone:localStorage.userPhone,
+            score:that.score+that.total
+          },
+          success:function (data) {
+
+            that.score = data.score
+
+          }
+        })
+
+    },
     methods:{
 		    move:function () {
             $(".z-move").parents().find(".z-hasorder").remove()

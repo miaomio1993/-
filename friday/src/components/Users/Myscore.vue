@@ -2,24 +2,47 @@
 	<div>
 		<div class="z-myscore">
 			<h2>我的积分</h2>
-			<p class="z-nowscore">当前积分：<span>240分</span></p>
+			<p class="z-nowscore">当前积分：<span>{{score}}分</span></p>
 			<ul class="z-myscore-cont">
 				<li><span>积分日期</span><span>变动</span><span>来源</span></li>
 				<li><span>2015-04-05</span><span>-100</span><span>消费赠送</span></li>
 			</ul>
 		</div>
-		
+
 	</div>
 </template>
 
 <script>
+  export default{
+      data(){
+          return{
+              score:240
+          }
+      },
+    created:function () {
+        var that = this;
+        this.phoneNumber=localStorage.userPhone,
+          $.ajax({
+            url:"api/myaccount",
+            type:"get",
+            data:{
+              userPhone:localStorage.userPhone
+            },
+            success:function (data) {
+              that.score = data.score,
+                that.money = data.money
+            }
+          })
+
+      }
+  }
 </script>
 
 <style scoped="">
 .z-myscore{
 	width: 1077px;
 	border: 1px solid #e3e3e3;
-}	
+}
 .z-myscore>h2{
   line-height: 60px;
   font-size: 20px;

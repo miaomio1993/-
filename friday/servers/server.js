@@ -71,4 +71,32 @@ app.get("/myaccount",function (req,res) {
 
 })
 
+app.get("/mymoney",function (req,res) {
+  var reqObj = req.query;
+  console.log(reqObj)
+  Model.update({userPhone:reqObj.userPhone},{$set:{money:reqObj.money}},{multi:true},function (err) {
+    if (!err){
+      Model.find({userPhone:reqObj.userPhone},function (err,doc) {
+        console.log(doc)
+        res.send({money:doc[0].money})
+      })
+    }
+  })
+
+})
+
+app.get("/scoreorder",function (req,res) {
+  var reqObj = req.query;
+  console.log(reqObj)
+  Model.update({userPhone:reqObj.userPhone},{$set:{score:reqObj.score}},{multi:true},function (err) {
+    if (!err){
+      Model.find({userPhone:reqObj.userPhone},function (err,doc) {
+        console.log(doc)
+        res.send({score:doc[0].score})
+      })
+    }
+  })
+
+})
+
 app.listen(8080)
