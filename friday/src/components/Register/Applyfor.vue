@@ -24,7 +24,7 @@
 			<li>
 				<input type="text" placeholder="验证码" />
 				<img src="./img/changepassword1.png"/>
-				<a href="">看不清楚换一张</a>
+				<a href="JavaScript:void(0)">看不清楚换一张</a>
 			</li>
 			<li>
 				<input type="password" placeholder="手机验证码" />

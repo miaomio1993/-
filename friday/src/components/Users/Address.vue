@@ -3,7 +3,7 @@
 		<div class="z-address">
 			<h2>地址管理 <a href="#/addaddress" class="z-addplace">添加新地址</a></h2>
 			<ul>
-				<li v-for="n in 4">
+				<li v-for="n in 1">
 					<span>收货人</span>
 					<span>所在区域</span>
 					<span>街道地址</span>
@@ -21,6 +21,13 @@
 </template>
 
 <script>
+  export default{
+      data(){
+          return{
+              
+          }
+      }
+  }
 </script>
 
 <style scoped>
@@ -28,7 +35,7 @@
 width: 1077px;
 border: 1px solid #e3e3e3;
 position: relative;
-}	
+}
 .z-address>h2{
   line-height: 60px;
   font-size: 20px;
@@ -51,7 +58,7 @@ position: relative;
 	border-radius: 4px;
 	text-align: center;
 
-	
+
 }
 .z-address>ul{
 	margin: 20px;
