@@ -14,21 +14,9 @@
           </li>
         </ul>
       </div>
-      <nav>
-        <a href="#/" class="s-active">
-          <span>首页</span>
-        </a>
-        <a href="#/local">
-          <span>同城</span>
-        </a>
-        <a href="#/about">
-          <span>礼拜五</span>
-        </a>
-        <a href="#/totalcity">
-          <span>积分商城</span>
-        </a>
-        <a href="#/special">
-          <span>导航+</span>
+      <nav v-for="(relation,index) in relations">
+        <a :href="relation.href" :class="{checked:index==nowIndex}" v-on:click="relationClick(index)">
+          <span >{{relation.text}}</span>
         </a>
       </nav>
     </div>
@@ -37,63 +25,75 @@
 </template>
 
 <script>
-    export default {
-        name: 'headernav',
-        data () {
-            return {
-              list:[
-                {
-                  title:"新鲜水果",
-                  img:require("./img/header-nav1.png"),
-                  arr:["草莓","葡萄","香蕉","苹果"],
-                },
-                {
-                  title:"生猛海鲜",
-                  img:require("./img/header-nav2.png"),
-                  arr:["带鱼","对虾","海鱼","龙虾","牡蛎"],
-                },
-                {
-                  title:"肉类家禽",
-                  img:require("./img/header-nav3.png"),
-                  arr:["土鸡","牛肉","猪肉","羊肉","驴肉","兔肉"],
-                },
-                {
-                  title:"蛋奶素食",
-                  img:require("./img/header-nav4.png"),
-                  arr:["牛奶","酸奶","豆奶粉","面包甜点"],
-                },
-                {
-                  title:"田园蔬菜",
-                  img:require("./img/header-nav5.png"),
-                  arr:["有机蔬菜","蔬菜果篮","地产蔬菜","进口蔬菜"],
-                },
-                {
-                  title:"零食酒水",
-                  img:require("./img/header-nav6.png"),
-                  arr:["零食","特色果干","休闲冲饮","茶叶","白酒","啤酒","葡萄酒"],
-                },
-                {
-                  title:"粮油杂货",
-                  img:require("./img/header-nav7.png"),
-                  arr:["优选米面","优选杂粮","粮油调味","其他食材"],
-                },
-                {
-                  title:"礼品卡卷",
-                  img:require("./img/header-nav8.png"),
-                  arr:["优惠券","打折卷","满就送"],
-                },
-                {
-                  title:"家具用品",
-                  img:require("./img/header-nav9.png"),
-                  arr:["洗衣液","保健品","洗护用品"],
-                }
-              ]
-            }
-        }
+  export default {
+    name: 'headernav',
+    data () {
+      return {
+        list:[
+          {
+            title:"新鲜水果",
+            img:require("./img/header-nav1.png"),
+            arr:["草莓","葡萄","香蕉","苹果"],
+          },
+          {
+            title:"生猛海鲜",
+            img:require("./img/header-nav2.png"),
+            arr:["带鱼","对虾","海鱼","龙虾","牡蛎"],
+          },
+          {
+            title:"肉类家禽",
+            img:require("./img/header-nav3.png"),
+            arr:["土鸡","牛肉","猪肉","羊肉","驴肉","兔肉"],
+          },
+          {
+            title:"蛋奶素食",
+            img:require("./img/header-nav4.png"),
+            arr:["牛奶","酸奶","豆奶粉","面包甜点"],
+          },
+          {
+            title:"田园蔬菜",
+            img:require("./img/header-nav5.png"),
+            arr:["有机蔬菜","蔬菜果篮","地产蔬菜","进口蔬菜"],
+          },
+          {
+            title:"零食酒水",
+            img:require("./img/header-nav6.png"),
+            arr:["零食","特色果干","休闲冲饮","茶叶","白酒","啤酒","葡萄酒"],
+          },
+          {
+            title:"粮油杂货",
+            img:require("./img/header-nav7.png"),
+            arr:["优选米面","优选杂粮","粮油调味","其他食材"],
+          },
+          {
+            title:"礼品卡卷",
+            img:require("./img/header-nav8.png"),
+            arr:["优惠券","打折卷","满就送"],
+          },
+          {
+            title:"家具用品",
+            img:require("./img/header-nav9.png"),
+            arr:["洗衣液","保健品","洗护用品"],
+          }
+        ],
+        relations: [
+          {text:'首页',id:'program',href:"#/"},
+          {text:'同城',id:'person',href:"#/local"},
+          {text:'礼拜五',id:'organization',href:"#/about"},
+          {text:'积分商城',id:'tech',href:"#/totalcity"},
+          {text:'导航+',id:'location',href:"#/special"}
+        ],
+        nowIndex:0,
+      }
+    },
+    methods:{
+      relationClick:function(index){
+        this.nowIndex=index;
+      }
     }
+
+  }
 </script>
-
-
 <style scoped>
   .s-header-nav-wrap{
     width: 100%;
@@ -173,7 +173,7 @@
   }
   nav{
     float: left;
-    margin-left: -1px;
+    /*margin-left: -1px;*/
   }
   nav>a{
     float: left;
@@ -181,11 +181,11 @@
     line-height: 49px;
     color: #333;
   }
-  nav>a:hover{
+  nav>a:hover {
     background: #f08200;
     color: white;
   }
-  nav>.s-active{
+  .checked{
     background: #f08200;
     color: white;
   }
@@ -196,5 +196,4 @@
     padding: 0 60px;
     border-left: 1px solid #e8e8e8;
   }
-
 </style>
