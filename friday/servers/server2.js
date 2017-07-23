@@ -16,6 +16,11 @@ var link=mysql.createConnection({
 });
 link.connect();
 
+//查询表
+link.query("SELECT * FROM product_list",function (err,rows,fields) {
+  console.log(rows);
+});
+
 
 
 

@@ -26,7 +26,7 @@
                     subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
                     priceNow:28.80,
                     priceOld:40.00,
-                    img:require('./img/index-cont1-1.png'),
+                    img:require('/Users/lanouhn/Desktop/bestTeam/friday/src/components/Index/img/index-cont1-1.png'),
                   },
                   {
                     id:'',
@@ -34,7 +34,7 @@
                     subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
                     priceNow:28.80,
                     priceOld:40.00,
-                    img:require('./img/index-cont1-2.png'),
+                    img:require('/Users/lanouhn/Desktop/bestTeam/friday/src/components/Index/img/index-cont1-2.png'),
                   },
                   {
                     id:'',
@@ -42,7 +42,7 @@
                     subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
                     priceNow:28.80,
                     priceOld:40.00,
-                    img:require('./img/index-cont1-3.png'),
+                    img:require('/Users/lanouhn/Desktop/bestTeam/friday/src/components/Index/img/index-cont1-3.png'),
                   },
                   {
                     id:'',
@@ -50,7 +50,7 @@
                     subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
                     priceNow:28.80,
                     priceOld:40.00,
-                    img:require('./img/index-cont1-4.png'),
+                    img:require('/Users/lanouhn/Desktop/bestTeam/friday/src/components/Index/img/index-cont1-4.png'),
                   }
                 ]
               },
@@ -178,6 +178,11 @@
         },
         components:{
             Countlist
+        },
+        created:function () {
+          $.ajax({
+            url:''
+          })
         }
     }
 </script>
