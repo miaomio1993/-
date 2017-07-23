@@ -1,6 +1,6 @@
 <template>
 	<div class="g-search">
-		<img src="images/list-search.png" alt="" />
+		<img src="img/list-search.png" alt="" />
 		<span>抱歉，暂未查到您要的商品</span>
 	</div>
 </template>

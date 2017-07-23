@@ -28,52 +28,18 @@
 			</div>
 			<!--商品列表栏-->
 			<div class="g-goods">
-				<ul>
-					<li >
-						<a href="">
-							<img src="./images/水果1.png" alt="" />
-							<h6>新西兰佳沛黄金奇异果</h6>
-							<span>果肉绵密、花蜜般的甘甜百吃不厌</span>
+				<ul v-for="item in itemlist" >
+					<li :style="{backgroundImage:'url('+item.img+')'}">
+						<a href="#/detail">
+
+              <div class="g-text">
+                <h6>{{item.title}}</h6>
+                <span>{{item.subhead}}</span>
+              </div>
 						</a>
 						<div class="g-goods-price">
-							<span class="g-price-now">￥28.80</span>
-							<span class="g-price-old">￥40.00</span>
-							<span class="iconfont icon-gouwuche"></span>
-						</div>
-					</li>
-					<li >
-						<a href="">
-							<img src="./images/水果2.png" alt="" />
-							<h6>新西兰佳沛黄金奇异果</h6>
-							<span>果肉绵密、花蜜般的甘甜百吃不厌</span>
-						</a>
-						<div class="g-goods-price">
-							<span class="g-price-now">￥28.80</span>
-							<span class="g-price-old">￥40.00</span>
-							<span class="iconfont icon-gouwuche"></span>
-						</div>
-					</li>
-					<li >
-						<a href="">
-							<img src="./images/水果3.png" alt="" />
-							<h6>新西兰佳沛黄金奇异果</h6>
-							<span>果肉绵密、花蜜般的甘甜百吃不厌</span>
-						</a>
-						<div class="g-goods-price">
-							<span class="g-price-now">￥28.80</span>
-							<span class="g-price-old">￥40.00</span>
-							<span class="iconfont icon-gouwuche"></span>
-						</div>
-					</li>
-					<li >
-						<a href="">
-							<img src="./images/水果4.png" alt="" />
-							<h6>新西兰佳沛黄金奇异果</h6>
-							<span>果肉绵密、花蜜般的甘甜百吃不厌</span>
-						</a>
-						<div class="g-goods-price">
-							<span class="g-price-now">￥28.80</span>
-							<span class="g-price-old">￥40.00</span>
+							<span class="g-price-now">￥{{item.priceNow}}</span>
+							<span class="g-price-old">￥{{item.priceOld}}</span>
 							<span class="iconfont icon-gouwuche"></span>
 						</div>
 					</li>
@@ -113,7 +79,50 @@
 export default {
   name: 'search',
   data () {
-    return {}
+    return {
+      itemlist:[
+        {
+          id:'',
+          title:'新西兰佳沛黄金奇异果',
+          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+          priceNow:28.80,
+          priceOld:40.00,
+          img:require('./img/index-cont1-1.png'),
+        },
+        {
+          id:'',
+          title:'新西兰佳沛黄金奇异果',
+          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+          priceNow:28.80,
+          priceOld:40.00,
+          img:require('./img/index-cont1-2.png'),
+        },
+        {
+          id:'',
+          title:'新西兰佳沛黄金奇异果',
+          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+          priceNow:28.80,
+          priceOld:40.00,
+          img:require('./img/index-cont1-3.png'),
+        },
+        {
+          id:'',
+          title:'新西兰佳沛黄金奇异果',
+          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+          priceNow:28.80,
+          priceOld:40.00,
+          img:require('./img/index-cont1-4.png'),
+        },
+        {
+          id:'',
+          title:'新西兰佳沛黄金奇异果',
+          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
+          priceNow:28.80,
+          priceOld:40.00,
+          img:require('./img/index-cont1-4.png'),
+        }
+      ]
+    }
   }
 }
 </script>
@@ -210,24 +219,25 @@ export default {
 	border:1px solid gray;
 }*/
 .g-goods>ul>li>a{
-	height: 364px;
+  display: block;
+  width: 100%;
+	height: 365px;
+  position: relative;
 }
-.g-goods>ul>li>a>img{
-	height: 314px;
-	width: 303px;
-	border-radius: 3px;
+.g-goods>ul>li>a>.g-text{
+  position: absolute;
+  left: 30px;
+  bottom: 0;
 }
-.g-goods>ul>li>a>h6{
-	font-size: 16px;
-	color:red;
-	padding-left: 30px;
+.g-goods>ul>li>a>.g-text>h6{
+	font-size: 18px;
+  font-weight: bolder;
 }
-.g-goods>ul>li>a>span{
+.g-goods>ul>li>a>.g-text>span{
 	display:block;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	padding-left: 30px;
-	font-size: 12px;
+	font-size: 14px;
 	color:#adadad;
 }
 .g-goods>ul>li>.g-goods-price{
@@ -240,7 +250,6 @@ ul>li>.g-goods-price>.g-price-now{
 	font-size: 20px;
 	color:#ff5757;
 	padding-left: 30px;
-
 }
 ul>li>.g-goods-price>.g-price-old{
 	padding-left: 10px;
@@ -252,6 +261,7 @@ ul>li>.g-goods-price>.icon-gouwuche{
 	right: 20px;
 	color:#f08200;
 	font-size: 30px;
+  cursor: pointer;
 }
 /*页面跳转部分*/
 .g-pages{
