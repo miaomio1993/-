@@ -180,6 +180,7 @@
             Countlist
         },
         created:function () {
+          var that=this;
           $.ajax({
             url:'api/index',
             type:"get",
@@ -187,8 +188,25 @@
               act:"count1"
             },
             success:function (data) {
-
-            }
+              for(var i=0;i<data.length;i++){
+                that.count1.itemlist[i].id=data[i].id;
+                that.count1.itemlist[i].title=data[i].name;
+                that.count1.itemlist[i].subhead=data[i].description;
+                that.count1.itemlist[i].priceNow=data[i].newPrice;
+                that.count1.itemlist[i].priceOld=data[i].oldPrice;
+                that.count1.itemlist[i].img=25;
+//                that.count1.itemlist[i]={
+//                  id:data[i].id,
+//                  title:data[i].name,
+//                  subhead:data[i].description,
+//                  priceNow:data[i].newPrice,
+//                  priceOld:data[i].oldPrice,
+//                  img:require("/Users/lanouhn/Desktop/bestTeam/friday/src/components/Index/img/index-cont1-2.png"),
+//                }
+              }
+//              var src="/Users/lanouhn/Desktop/bestTeam/friday/src/components/Index/img/index-cont1-2.png"
+//              that.count1.itemlist[0].img=require(""+data[0].showImg);
+            },
           })
         }
     }
