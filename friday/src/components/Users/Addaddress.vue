@@ -5,7 +5,7 @@
 		<ul class="z-cont">
 			<li>
 				<i>*</i>
-				<p><em>收货人姓名：</em><span><input type="text" /></span></p>
+				<p><em>收货人姓名:</em><span><input type="text" v-model="people"/></span></p>
 			</li>
 			<li>
 				<i>*</i>
@@ -13,18 +13,18 @@
 			</li>
 			<li>
 				<i>*</i>
-				<p><em>详细地址：</em> <span><input type="text" /></span></p>
-				
+				<p><em>详细地址：</em> <span><input type="text" v-model="detailarea"/></span></p>
+
 			</li>
 			<li>
 				<i>*</i>
-				<p><em>联系电话：</em><span><input type="text" /> 或固定电话：<input type="text" />- <input type="text" /></span></p>
+				<p><em>联系电话：</em><span><input type="text" v-model="phone"/> 或固定电话：<input type="text" />- <input type="text" /></span></p>
 			</li>
 			<li>
 				<input type="checkbox" name="" id="" value="" /><span>设置为常用地址</span>
 			</li>
 			<li>
-				<button>保存</button>
+				<button @click="save">保存</button>
 			</li>
 		</ul>
 	</div>
@@ -36,12 +36,48 @@
 	 export default {
         name: 'users',
         data () {
-            return {}
+            return {
+                people:"",
+                detailarea:"",
+                phone:"",
+                area:"111"
+            }
         },
         components:{
         		Distpicker:Distpicker
-        		
-        }
+        },
+        created:function () {
+          var that = this;
+          this.$root.$on("selected",this.way)
+        },
+        methods:{
+              way:function (data) {
+                  console.log(data)
+                  this.area=data.province.value+data.city.value+data.area.value;
+
+              },
+              save:function() {
+                var that = this;
+                console.log(typeof(localStorage.userPhone))
+                $.ajax({
+                  url:"api/addarea",
+                  type:"get",
+                  data:{
+                    people:that.people,
+                    detailarea:that.detailarea,
+                    phone:that.phone,
+                    area:that.area,
+                    userphone:localStorage.userPhone
+
+                  },
+                  success:function (data) {
+                      if (data.err==1){
+                          window.location.href="#/address"
+                      }
+                  }
+                })
+              }
+          }
        }
 </script>
 
@@ -49,7 +85,7 @@
 .z-address{
 width: 1077px;
 border: 1px solid #e3e3e3;
-}	
+}
 .z-address>a{
 	display: inline-block;
 	width: 1077px;
@@ -83,14 +119,17 @@ border: 1px solid #e3e3e3;
 .z-cont>li:nth-child(1)>p>span>input{
 	width: 333px;
 	height: 33px;
+  border: 1px solid #f5f5f5;
 }
 .z-cont>li:nth-child(3)>p>span>input{
 	width: 493px;
 	height: 33px;
+  border: 1px solid #f5f5f5;
 }
 .z-cont>li:nth-child(4)>p>span>input{
 	width: 145px;
 	height: 33px;
+  border: 1px solid #f5f5f5;
 }
 .z-cont>li:nth-child(4)>p>span>input:nth-child(2){
 	width: 80px;

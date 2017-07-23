@@ -3,13 +3,13 @@
 		<div class="z-address">
 			<h2>地址管理 <a href="#/addaddress" class="z-addplace">添加新地址</a></h2>
 			<ul>
-				<li v-for="n in 1">
-					<span>收货人</span>
-					<span>所在区域</span>
-					<span>街道地址</span>
-					<span>联系电话</span>
-					<span>备注</span>
-					<span>操作</span>
+				<li v-for="(item,index) in items">
+					<span>{{item.people}}</span>
+					<span>{{item.area}}</span>
+					<span>{{item.address}}</span>
+					<span>{{item.phone}}</span>
+					<span>{{item.message}}</span>
+					<span>{{item.make}}</span>
 				</li>
 			</ul>
 			<!--当没有收货地址时-->
@@ -24,9 +24,38 @@
   export default{
       data(){
           return{
-              
+             items:[
+               {
+                   people:"收货人",
+                    area:"所在区域",
+                    address:"街道地址",
+                    phone:"联系电话",
+                    message:"备注",
+                    make:"操作"
+               },{
+                 people:"",
+                 area:"",
+                 address:"",
+                 phone:"",
+                 message:"",
+                 make:""
+               }
+             ]
           }
-      }
+      },
+    created:function () {
+      $.ajax({
+        url:"api/area",
+        type:"get",
+        data:{
+//            userPhone:location.
+        },
+        success:function (data) {
+
+        }
+      })
+    }
+
   }
 </script>
 
