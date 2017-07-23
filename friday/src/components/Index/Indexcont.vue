@@ -181,7 +181,14 @@
         },
         created:function () {
           $.ajax({
-            url:''
+            url:'api/index',
+            type:"get",
+            data:{
+              act:"count1"
+            },
+            success:function (data) {
+
+            }
           })
         }
     }
