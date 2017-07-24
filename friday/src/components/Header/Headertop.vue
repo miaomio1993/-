@@ -15,12 +15,12 @@
           <div>
             <a href="javascript:void(0)">我的订单</a>
           </div>
-          <div id="s-user">
+          <div id="s-user" v-if="isLogin">
             <span>您好，</span>
-            <a href="javascript:void(0)" class="s-user">826569122</a>
+            <a href="javascript:void(0)" class="s-user">{{userPhone}}</a>
             <a href="javascript:void(0)" class="s-quit">退出</a>
           </div>
-          <div id="s-login">
+          <div id="s-login" v-if="!isLogin">
             <a href="#/login" class="s-login">登录</a>
             <a href="#/register" class="s-reg">注册</a>
           </div>
@@ -40,10 +40,13 @@
                 city:"郑州市",
                 area:"高新区",
                 turn:false,
+                isLogin:localStorage.userPhone||false,
+                userPhone:localStorage.userPhone||'未知',
             }
         },
         created:function () {
           this.$root.$on("selected",this.getData);
+          this.$root.$on("userReg",this.getUser);
         },
         methods:{
             select:function () {
@@ -56,6 +59,10 @@
             },
             close:function (data) {
               this.turn=data;
+            },
+            getUser:function (data) {
+              this.isLogin=localStorage.userPhone;
+              this.userPhone=localStorage.userPhone;
             }
         },
         components:{
@@ -118,12 +125,14 @@
     background-size: 16px 16px ;
   }
   #s-user{
-    color: #4b943d;
+    /*color: #4b943d;*/
     margin-right: 5px;
-    display: none;
+  }
+  .s-user{
+    color: #4b943d;
   }
   #s-login{
-    /*display: none;*/
+
   }
   .s-login{
     padding-right: 10px;

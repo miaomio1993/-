@@ -96,7 +96,8 @@
                           if (data.err==2){
                             localStorage.userPhone = userPhone1;
                             localStorage.passWord = passWord1;
-                            window.location.href = "#/users"
+                            window.location.href = "#/users";
+                            that.$root.$emit("userReg","1")
                           }
                           if (data.err==1){
                               alert("已经注册,请直接登录")

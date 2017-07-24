@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4864e912-b1dd-4c60-9d99-4833559fbcc7" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/servers/server2.js" afterPath="$PROJECT_DIR$/friday/servers/server2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" afterPath="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Index/Countlist.vue" afterPath="$PROJECT_DIR$/friday/src/components/Index/Countlist.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Header/Headertop.vue" afterPath="$PROJECT_DIR$/friday/src/components/Header/Headertop.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Register/Applyfor.vue" afterPath="$PROJECT_DIR$/friday/src/components/Register/Applyfor.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,46 +19,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="31">
+              <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Indexcont.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/friday/servers/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1932">
-              <caret line="256" column="5" lean-forward="false" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
-              <folding>
-                <element signature="e#2025#3402#0" expanded="false" />
-                <element signature="e#3425#4801#0" expanded="false" />
-                <element signature="e#4824#6201#0" expanded="false" />
-                <element signature="e#6309#8931#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Countlist.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countlist.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="614">
+              <caret line="189" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Headercenter.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue">
+      <file leaf-file-name="Headertop.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+            <state relative-caret-position="541">
+              <caret line="64" column="52" lean-forward="false" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -79,6 +64,8 @@
         <option value="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Index/Countlist.vue" />
         <option value="$PROJECT_DIR$/friday/servers/server2.js" />
+        <option value="$PROJECT_DIR$/friday/src/components/Header/Headertop.vue" />
+        <option value="$PROJECT_DIR$/friday/src/components/Register/Applyfor.vue" />
       </list>
     </option>
   </component>
@@ -233,7 +220,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Index" />
+              <option name="myItemId" value="Register" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -403,12 +390,12 @@
       <option name="presentableId" value="Default" />
       <updated>1500773271214</updated>
       <workItem from="1500773278255" duration="19940000" />
-      <workItem from="1500851684696" duration="9294000" />
+      <workItem from="1500851684696" duration="11957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29234000" />
+    <option name="totallyTimeSpent" value="31897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1569" height="977" extended-state="0" />
@@ -562,14 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countdown.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -594,9 +573,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countlist.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/servers/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="189" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
+        <state relative-caret-position="1700">
           <caret line="256" column="5" lean-forward="false" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
           <folding>
             <element signature="e#2025#3402#0" expanded="false" />
@@ -604,14 +599,6 @@
             <element signature="e#4824#6201#0" expanded="false" />
             <element signature="e#6309#8931#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countlist.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -625,8 +612,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="31">
+          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Register/Applyfor.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="64" column="52" lean-forward="false" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
           <folding />
         </state>
       </provider>
