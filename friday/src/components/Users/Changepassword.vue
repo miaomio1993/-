@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<div class="z-changepassword">
-			<h2>修改密码</h2>	
+			<h2>修改密码</h2>
 			<div class="z-password">
-				<input type="text" placeholder="" />
-				<input type="text" placeholder="请输入密码（6-20位号码字符）"/>
-				<input type="text" placeholder="请再次输入密码确认"/>
+				<input type="text" placeholder="请输入电话号码" v-model="phone" class="userPhone"/>
+				<input type="text" placeholder="请输入密码（6-20位号码字符）" v-model="password" class="passWord"/>
+				<input type="text" placeholder="请再次输入密码确认" v-model="again" class="repassword"/>
 				<div class="z-yanzhengma">
 					<input type="text" placeholder="验证码"/>
 					<img src="./img/changepassword1.png" alt="" />
@@ -15,21 +15,83 @@
 					<input type="text" placeholder="手机验证码"/>
 					<button>获取验证码</button>
 				</div>
-				<button class="z-submit">提交修改</button>
+				<button class="z-submit" @click="submit">提交修改</button>
 			</div>
+      <div class="z-changesuccess" v-if="turn">
+        <span class="iconfont icon-duigou"></span>
+        <p>恭喜你修改成功</p>
+      </div>
 		</div>
-		
 	</div>
 </template>
 
 <script>
+  export default{
+      data(){
+          return{
+            turn:false,
+            phone:"",
+            password:"",
+            again:""
+          }
+      },
+    methods:{
+        submit:function () {
+          var that=this;
+          if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))){
+              alert("电话号码有误")
+          }else {
+            if (!(/^[a-zA-Z]{6,10}$/.test($(".passWord").val()))) {
+              alert("密码格式有误")
+            } else {
+              if ($(".passWord").val() != $(".repassword").val()) {
+                alert("两次密码不一致")
+              }else {
+
+                $.ajax({
+                  url:"api/changepassword",
+                  type:"get",
+                  data:{
+                     userPhone:that.phone,
+                      passWord:that.password
+                  },
+                  success:function (data) {
+                      if (data.err==1){
+                        that.turn=true
+                        setTimeout(function () {
+                          that.phone="";
+                          that.password="";
+                          that.again="";
+                          that.turn=false
+                        },2000)
+
+                      }
+                      if (data.err==2){
+                          alert("不存在此号码")
+                        setTimeout(function () {
+                          that.phone="";
+                          that.password="";
+                          that.again="";
+                        },1000)
+
+                      }
+                  }
+                })
+
+              }
+            }
+          }
+        }
+    }
+  }
 </script>
 
 <style scoped>
 .z-changepassword{
 width: 1077px;
 border: 1px solid #e3e3e3;
-}	
+  position: relative;
+}
 .z-changepassword>h2{
   line-height: 60px;
   font-size: 20px;
@@ -111,4 +173,21 @@ border: 1px solid #e3e3e3;
  	margin-top: 20px;
  	border-radius: 4px;
  }
+  .z-changesuccess{
+    position: absolute;
+    top:180px;
+    left: 534px;
+    width: 453px;
+    height: 28px;
+    text-align: center;
+    border-radius: 10px;
+    background: #D9D9D9;
+    color: #F78327;
+    font-size: 20px;
+    padding: 80px 0;
+
+  }
+.z-changesuccess>p{
+  display: inline-block;
+}
 </style>

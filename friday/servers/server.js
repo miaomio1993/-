@@ -75,7 +75,6 @@ app.get("/myaccount",function (req,res) {
 
 app.get("/mymoney",function (req,res) {
   var reqObj = req.query;
-  // console.log(reqObj)
   Model.update({userPhone:reqObj.userPhone},{$set:{money:reqObj.money}},{multi:true},function (err) {
     if (!err){
       Model.find({userPhone:reqObj.userPhone},function (err,doc) {
@@ -174,7 +173,6 @@ app.get("/addarea",function (req,res) {
     }
   })
 
-
 })
 
 //地址管理
@@ -187,5 +185,19 @@ app.get("/area",function (req,res) {
     }
   })
 })
-
+ //修改密码
+app.get("/changepassword",function (req,res) {
+    var reqObj = req.query;
+  Model.find({userPhone:reqObj.userPhone},function (err,doc) {
+    if(doc.length){
+      Model.update({userPhone:reqObj.userPhone},{$set:{passWord:reqObj.passWord}},{multi:true},function (err) {
+        if(!err){
+          res.send({err:1})
+        }
+      })
+      }else {
+      res.send({err:2})
+    }
+  })
+})
 app.listen(8080)

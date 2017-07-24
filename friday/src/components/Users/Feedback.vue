@@ -3,15 +3,27 @@
 	<div class="z-feedback">
 		<h2>意见反馈</h2>
 		<div class="z-advice">
-			<textarea name=""></textarea>
+			<textarea name="" v-model="text"></textarea>
 			<button class="z-off">取消</button>
-			<button class="z-submit">提交</button>
+			<button class="z-submit" @click="move">提交</button>
 		</div>
 	</div>
 </div>
 </template>
 
 <script>
+  export default{
+      data(){
+          return{
+             text:""
+          }
+      },
+      methods:{
+          move:function () {
+            this.text=""
+          }
+      }
+  }
 </script>
 
 <style scoped>

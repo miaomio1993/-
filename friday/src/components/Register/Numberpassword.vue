@@ -62,7 +62,7 @@
           this.turn = false
           if (!$(".check1").prop("checked")) {
             console.log($(".check1").prop("checked"))
-            alert("点击直接登录")
+            alert("点击自动登录")
           }else{
             this.$root.$emit("listen1", "会员登录")
             $.ajax({
