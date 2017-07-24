@@ -6,7 +6,7 @@
     </div>
     <div class="s-cont">
       <div class="s-cont-detail" v-for="item in list.itemlist" :style="{backgroundImage:'url('+item.img+')'}">
-        <a href="#/detail">
+        <a href="#/detail" @click="goto(item.id)">
           <div class="s-text">
             <p>{{item.title}}</p>
             <p>{{item.subhead}}</p>
@@ -14,7 +14,7 @@
         </a>
         <div class="s-detail-bottom">
           <p><span>￥{{item.priceNow}}</span><i>￥{{item.priceOld}}</i></p>
-          <span class="iconfont icon-gouwuche"></span>
+          <span class="iconfont icon-gouwuche" @click="addShoppingcar(item.id)"></span>
         </div>
       </div>
     </div>
@@ -31,6 +31,16 @@
             return {}
         },
         methods:{
+          goto:function (id) {
+            sessionStorage.goodsId=id;
+          },
+          addShoppingcar:function (id) {
+            if(localStorage.userPhone){
+
+            }else {
+              this.$root.$emit("login",true);
+            }
+          }
 
         }
 

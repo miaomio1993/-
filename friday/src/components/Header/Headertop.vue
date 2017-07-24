@@ -27,11 +27,13 @@
       </div>
     </div>
     <headeraddress v-if="turn" @close="close()"></headeraddress>
+
   </div>
 </template>
 
 <script>
-    import Headeraddress from "@/components/Header/Headeraddress/Headeraddress.vue"
+    import Headeraddress from "@/components/Header/Headeraddress/Headeraddress.vue";
+
     export default {
         name: 'headertop',
         data () {
@@ -42,11 +44,13 @@
                 turn:false,
                 isLogin:localStorage.userPhone||false,
                 userPhone:localStorage.userPhone||'未知',
+
             }
         },
         created:function () {
           this.$root.$on("selected",this.getData);
           this.$root.$on("userReg",this.getUser);
+
         },
         methods:{
             select:function () {
@@ -63,10 +67,11 @@
             getUser:function (data) {
               this.isLogin=localStorage.userPhone;
               this.userPhone=localStorage.userPhone;
-            }
+            },
+
         },
         components:{
-            Headeraddress
+            Headeraddress,
         }
     }
 </script>

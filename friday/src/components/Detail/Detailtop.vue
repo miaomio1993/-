@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="s-detail-choose">
-        <h1>新疆哈密瓜1500kg</h1>
+        <h1>{{name}}</h1>
         <div class="s-tag">
           <span>全国</span>
           <span>礼拜五</span>
@@ -40,10 +40,11 @@
           </div>
           <div class="s-detail-describe">
             <p>
-              雀斑石榴持续热卖！云南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传
-              入我国。是中国三大石榴之一，粒大皮薄，汁多味甜爽口。雀斑石榴持续热卖！云
-              南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传入我国。是中国三大石
-              榴之一，粒大皮薄，汁多味甜爽口。
+              <!--雀斑石榴持续热卖！云南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传-->
+              <!--入我国。是中国三大石榴之一，粒大皮薄，汁多味甜爽口。雀斑石榴持续热卖！云-->
+              <!--南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传入我国。是中国三大石-->
+              <!--榴之一，粒大皮薄，汁多味甜爽口。-->
+              {{detail}}
             </p>
           </div>
         </div>
@@ -93,7 +94,10 @@
               zoomTop:0,
               kind1:[500,1000,2000],
               kind2:[500,1000],
-              imglist:[require('./img/detail-img1.jpg'),require('./img/detail-img2.jpg'),require('./img/detail-img3.jpg'),require('./img/detail-img4.jpg'),require('./img/detail-img5.jpg')]
+              imglist:[require('./img/detail-img1.jpg'),require('./img/detail-img2.jpg'),require('./img/detail-img3.jpg'),require('./img/detail-img4.jpg'),require('./img/detail-img5.jpg')],
+              name:"",
+              id:0,
+              detail:""
             }
         },
         methods:{
@@ -154,6 +158,24 @@
           collects:function () {
             this.collect=!this.collect;
           }
+        },
+        created:function () {
+            var that=this;
+          $.ajax({
+            url:'api/detail',
+            type:"get",
+            data:{
+              id:sessionStorage.goodsId
+            },
+            success:function (data) {
+              that.imglist=data.imglist;
+              that.newprice=data.newPrice;
+              that.oldprice=data.oldPrice;
+              that.name=data.name;
+              that.id=data.id;
+              that.detail=data.detail;
+            }
+          })
         }
     }
 </script>

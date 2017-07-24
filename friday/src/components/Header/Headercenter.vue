@@ -29,17 +29,31 @@
         <em v-if="shoppingNum>0">{{shoppingNum}}</em>
       </a>
     </div>
+    <login v-if="isLog"></login>
   </div>
 </template>
 
 <script>
+    import Login from "@/components/Search/Login";
     export default {
         name: 'headercenter',
         data () {
             return {
               shoppingNum:sessionStorage.shoppingNum||0,
+              isLog:false,
             }
+        },
+        created:function () {
+          this.$root.$on("login",this.getLogin);
+        },
+        components:{
+            Login,
+        },
+      methods:{
+        getLogin:function (data) {
+          this.isLog=true;
         }
+      }
     }
 </script>
 
