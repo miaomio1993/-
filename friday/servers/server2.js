@@ -232,7 +232,24 @@ app.get("/index",function (req, res) {
         res.send(rows);
       });
       break;
-  }
+  };
+});
+
+app.get("/detail",function (req, res) {
+  var id=req.query.id;
+  link.query("SELECT * FROM product_list WHERE id="+id,function (err,rows,fields) {
+    // console.log(rows[0].detailImg.split("$"));
+    var data={
+      id:rows[0].id,
+      oldPrice:rows[0].oldPrice,
+      newPrice:rows[0].newPrice,
+      detail:rows[0].detail,
+      imglist:rows[0].detailImg.split("$"),
+      name:rows[0].name,
+    };
+    res.send(data);
+  });
+
 });
 
 

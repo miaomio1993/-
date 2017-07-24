@@ -6,7 +6,7 @@
     </div>
     <div class="s-cont">
       <div class="s-cont-detail" v-for="item in list.itemlist" :style="{backgroundImage:'url('+item.img+')'}">
-        <a href="#/detail">
+        <a href="#/detail" @click="goto(item.id)">
           <div class="s-text">
             <p>{{item.title}}</p>
             <p>{{item.subhead}}</p>
@@ -31,7 +31,9 @@
             return {}
         },
         methods:{
-
+          goto:function (id) {
+            sessionStorage.goodsId=id;
+          }
         }
 
     }
