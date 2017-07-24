@@ -14,7 +14,7 @@
         </a>
         <div class="s-detail-bottom">
           <p><span>￥{{item.priceNow}}</span><i>￥{{item.priceOld}}</i></p>
-          <span class="iconfont icon-gouwuche"></span>
+          <span class="iconfont icon-gouwuche" @click="addShoppingcar(item.id)"></span>
         </div>
       </div>
     </div>
@@ -33,7 +33,15 @@
         methods:{
           goto:function (id) {
             sessionStorage.goodsId=id;
+          },
+          addShoppingcar:function (id) {
+            if(localStorage.userPhone){
+
+            }else {
+              this.$root.$emit("login",true);
+            }
           }
+
         }
 
     }
