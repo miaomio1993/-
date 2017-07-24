@@ -26,7 +26,7 @@
       <a class="s-shopping-car" href="#/shoppingcar">
         <span class="iconfont icon-gouwuche"></span>
         <b>购物车</b>
-        <em>5</em>
+        <em v-if="shoppingNum>0">{{shoppingNum}}</em>
       </a>
     </div>
   </div>
@@ -37,7 +37,7 @@
         name: 'headercenter',
         data () {
             return {
-
+              shoppingNum:sessionStorage.shoppingNum||0,
             }
         }
     }

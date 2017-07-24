@@ -6,6 +6,14 @@ var bodyParser=require("body-parser");
 var urlencodeParser=bodyParser.urlencoded();
 
 
+
+
+
+
+
+
+
+
 //连接mysql
 var mysql=require("mysql");
 var link=mysql.createConnection({

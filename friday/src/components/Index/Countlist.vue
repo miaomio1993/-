@@ -29,7 +29,11 @@
         },
         data () {
             return {}
+        },
+        methods:{
+
         }
+
     }
 </script>
 
