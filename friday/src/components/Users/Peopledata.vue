@@ -7,23 +7,88 @@
 				<li>昵称：<input type="text" /></li>
 				<li>性别：<label><input type="radio" name="li"/>男</label>
 					<label><input type="radio" name="li" checked="checked"/>女</label></li>
-						
-				<li>生日：<br /></li>
+
+				<li>生日：<datepicker :date="startTime" :option="option" :limit="limit"></datepicker><br /></li>
 				<li>手机：<input type="text" /><a href="#/peopledatabind1">更换手机</a></li>
 				<li><button>确认提交</button></li>
 			</ul>
 	</div>
-</div>	
+</div>
 </template>
 
 <script>
+  import Datepicker from '@/components/Users/vue-datepicker/vue-datepicker-es6'
+  export default{
+      data(){
+          return{
+            startTime: {
+              time: ''
+            },
+            endtime: {
+              time: ''
+            },
+            option: {
+              type: 'day',
+              week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+              month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              format: 'YYYY-MM-DD',
+              placeholder: 'when?',
+              inputStyle: {
+                'display': 'inline-block',
+                'padding': '6px',
+                'line-height': '22px',
+                'font-size': '16px',
+                'border': '2px solid #fff',
+                'box-shadow': '0 1px 3px 0 rgba(0, 0, 0, 0.2)',
+                'border-radius': '2px',
+                'color': '#5F5F5F'
+              },
+              color: {
+                header: '#ccc',
+                headerText: '#f00'
+              },
+              buttons: {
+                ok: 'Ok',
+                cancel: 'Cancel'
+              },
+              overlayOpacity: 0.5, // 0.5 as default
+              dismissible: true // as true as default
+            },
+            timeoption: {
+              type: 'min',
+              week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+              month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              format: 'YYYY-MM-DD HH:mm'
+            },
+            multiOption: {
+              type: 'multi-day',
+              week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+              month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              format:"YYYY-MM-DD HH:mm"
+            },
+            limit: [{
+              type: 'weekday',
+              available: [1, 2, 3, 4, 5]
+            },
+              {
+                type: 'fromto',
+                from: '2016-02-01',
+                to: '2016-02-20'
+              }]
+          }
+      },
+      components:{
+      Datepicker:Datepicker
+
+      }
+  }
 </script>
 
 <style scoped>
 .z-peopledata{
 width: 1077px;
 border: 1px solid #e3e3e3;
-}	
+}
 .z-peopledata>h2{
   line-height: 60px;
   font-size: 20px;
@@ -47,7 +112,7 @@ border: 1px solid #e3e3e3;
 }
 .z-cont>li:nth-child(1)>img{
 	vertical-align: bottom;
-	margin-right: 10px;  
+	margin-right: 10px;
 }
 .z-cont>li:nth-child(1)>a{
 	color: #498E3D;

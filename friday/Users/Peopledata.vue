@@ -7,23 +7,37 @@
 				<li>昵称：<input type="text" /></li>
 				<li>性别：<label><input type="radio" name="li"/>男</label>
 					<label><input type="radio" name="li" checked="checked"/>女</label></li>
-						
+
 				<li>生日：<br /></li>
 				<li>手机：<input type="text" /><a href="#/peopledatabind1">更换手机</a></li>
 				<li><button>确认提交</button></li>
+        <distpicker></distpicker>
 			</ul>
 	</div>
-</div>	
+</div>
 </template>
 
 <script>
+//  import Date from '@/components/Users/vue-datepicker/vue-datepicker'
+  import Distpicker from './Addaddress.vue'
+  export default{
+      data(){
+          return{
+
+          }
+      },
+    components:{
+//          Date:Date,
+      Distpicker:Distpicker
+    }
+  }
 </script>
 
 <style scoped>
 .z-peopledata{
 width: 1077px;
 border: 1px solid #e3e3e3;
-}	
+}
 .z-peopledata>h2{
   line-height: 60px;
   font-size: 20px;
@@ -47,7 +61,7 @@ border: 1px solid #e3e3e3;
 }
 .z-cont>li:nth-child(1)>img{
 	vertical-align: bottom;
-	margin-right: 10px;  
+	margin-right: 10px;
 }
 .z-cont>li:nth-child(1)>a{
 	color: #498E3D;
