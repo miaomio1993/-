@@ -67,7 +67,7 @@ app.get("/myaccount",function (req,res) {
   var reqObj = req.query;
   // console.log(reqObj)
   Model.find({userPhone:reqObj.userPhone},function (err,doc) {
-    console.log(doc)
+    // console.log(doc)
     res.send({score:doc[0].score,money:doc[0].money})
   })
 
@@ -117,27 +117,56 @@ var Model1 = db.model("address",userSchema1 );
 
 app.get("/addarea",function (req,res) {
   var reqObj = req.query;
+  // function addPlace(place) {
+  //   Model1.update({userPhone:reqObj.userphone},{$set:{place:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone}},{multi:true},function (err) {
+  //     if (!err){
+  //       res.send({err:1})
+  //     }
+  //   })
+  // }
+
   Model1.find({userPhone:reqObj.userphone},function (err,doc) {
+    // console.log(doc)
     if(doc.length==0){
-      Model1.create({address1:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj    .phone+':'+reqObj.userphone},function (err,doc) {
+      Model1.create({userPhone:reqObj.userphone,address1:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone},function (err,doc) {
         if(!err){
           res.send({err:1})
         }
       })
     }else{
-      if(doc.address2.length==0){
-        createarea()
+      if(doc[0].address2.length==0){
+        Model1.update({userPhone:reqObj.userphone},{$set:{address2:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone}},{multi:true},function (err) {
+          if (!err){
+            res.send({err:1})
+          }
+        })
       }else {
-        if(doc.address3.length==0){
-          createarea()
+        if(doc[0].address3.length==0){
+          Model1.update({userPhone:reqObj.userphone},{$set:{address3:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone}},{multi:true},function (err) {
+            if (!err){
+              res.send({err:1})
+            }
+          })
         }else {
-          if(doc.address4.length==0){
-            createarea()
+          if(doc[0].address4.length==0){
+            Model1.update({userPhone:reqObj.userphone},{$set:{address4:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone}},{multi:true},function (err) {
+              if (!err){
+                res.send({err:1})
+              }
+            })
           }else {
-            if(doc.address5.length==0){
-              createarea()
+            if(doc[0].address5.length==0){
+              Model1.update({userPhone:reqObj.userphone},{$set:{address5:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone}},{multi:true},function (err) {
+                if (!err){
+                  res.send({err:1})
+                }
+              })
             }else {
-              createarea()
+              Model1.update({userPhone:reqObj.userphone},{$set:{address5:reqObj.people+':'+reqObj.area+':'+reqObj.detailarea+':'+reqObj.phone+':'+reqObj.userphone}},{multi:true},function (err) {
+                if (!err){
+                  res.send({err:1})
+                }
+              })
             }
           }
         }
@@ -150,10 +179,11 @@ app.get("/addarea",function (req,res) {
 
 //地址管理
 app.get("/area",function (req,res) {
-  var regObj = req.query;
-  Model1.find({},function (err,doc) {
+  var reqObj = req.query;
+  Model1.find({userPhone:reqObj.userPhone},function (err,doc) {
     if (!err){
-
+        console.log(doc)
+        res.send({data:doc})
     }
   })
 })

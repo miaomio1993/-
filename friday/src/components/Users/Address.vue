@@ -3,13 +3,13 @@
 		<div class="z-address">
 			<h2>地址管理 <a href="#/addaddress" class="z-addplace">添加新地址</a></h2>
 			<ul>
-				<li v-for="(item,index) in items">
-					<span>{{item.people}}</span>
-					<span>{{item.area}}</span>
-					<span>{{item.address}}</span>
-					<span>{{item.phone}}</span>
-					<span>{{item.message}}</span>
-					<span>{{item.make}}</span>
+				<li v-for="item in items">
+					<span>{{item[0]}}</span>
+					<span>{{item[1]}}</span>
+					<span>{{item[2]}}</span>
+					<span>{{item[3]}}</span>
+					<span>{{item[4]}}</span>
+					<span>{{item[5]}}</span>
 				</li>
 			</ul>
 			<!--当没有收货地址时-->
@@ -25,33 +25,27 @@
       data(){
           return{
              items:[
-               {
-                   people:"收货人",
-                    area:"所在区域",
-                    address:"街道地址",
-                    phone:"联系电话",
-                    message:"备注",
-                    make:"操作"
-               },{
-                 people:"",
-                 area:"",
-                 address:"",
-                 phone:"",
-                 message:"",
-                 make:""
-               }
+                [
+                  "收货人", "所在区域","街道地址", "联系电话", "备注", "操作"
+                ]
+
              ]
           }
       },
     created:function () {
+          var that = this;
       $.ajax({
         url:"api/area",
         type:"get",
         data:{
-//            userPhone:location.
+           userPhone:localStorage.userPhone
         },
         success:function (data) {
-
+            that.items.push(data.data[0].address1.split(":"))
+            that.items.push(data.data[0].address2.split(":"))
+            that.items.push(data.data[0].address3.split(":"))
+            that.items.push(data.data[0].address4.split(":"))
+            that.items.push(data.data[0].address5.split(":"))
         }
       })
     }
@@ -95,10 +89,21 @@ position: relative;
 	/*display: none;*/
 }
 .z-address>ul>li{
-	display: flex;
-	justify-content: space-around;
-	line-height: 50px;
+	/*display: flex;*/
+	/*justify-content: space-around;*/
+	/*line-height: 50px;*/
 	border-bottom: 1px solid #e3e3e3;
+}
+.z-address>ul>li>span{
+  width: 160px;
+  text-align: center;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 20px;
+  margin: 15px 0;
+  vertical-align: middle;
 }
 .z-address>ul>li:nth-child(1){
 	background: #e3e3e3;
