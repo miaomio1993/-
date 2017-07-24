@@ -72,7 +72,6 @@
 					</ul>
 				</div>
 			</div>
-    <Login></Login>
 		</div>
 </template>
 <script>
