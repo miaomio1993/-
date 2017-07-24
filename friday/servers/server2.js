@@ -25,6 +25,21 @@ app.get("/index",function (req, res) {
         res.send(rows);
       });
       break;
+    case "count2":
+      link.query("SELECT * FROM product_list WHERE kind='海鲜'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+    case "count3":
+      link.query("SELECT * FROM product_list WHERE kind='肉类'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+    case "count4":
+      link.query("SELECT * FROM product_list WHERE kind='速食'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
   }
 });
 

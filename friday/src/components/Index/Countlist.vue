@@ -77,8 +77,11 @@
     height: 433px;
     overflow: hidden;
     position: relative;
-    background: url("./img/index-friday1.png") no-repeat center center;
-    background-color: #f2f2f2;
+    background: url("./img/index-friday1.png") no-repeat center top;
+    /*background-color: #f2f2f2;*/
+    background-size: 100% auto;
+    box-sizing: border-box;
+    border:1px solid rgb(237,237,237);
   }
   .s-cont-detail>a{
     display: block;
