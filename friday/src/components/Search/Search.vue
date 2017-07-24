@@ -72,10 +72,11 @@
 					</ul>
 				</div>
 			</div>
+    <Login></Login>
 		</div>
 </template>
-
 <script>
+  import Login from './Login.vue'
 export default {
   name: 'search',
   data () {
@@ -123,6 +124,9 @@ export default {
         }
       ]
     }
+  },
+  components:{
+    Login
   }
 }
 </script>
