@@ -3,7 +3,7 @@
 	<div class="z-peopledata">
 			<h2>个人资料</h2>
 			<ul class="z-cont">
-				<li>当前头像：<img src="./img/peopledata1.png"><a href="">修改</a></li>
+				<li>当前头像：<img :src="images"><a href="javascript:void(0)" class="send"><input type="file" class="spread" @change="change($event)">修改</a></li>
 				<li>昵称：<input type="text" /></li>
 				<li>性别：<label><input type="radio" name="li"/>男</label>
 					<label><input type="radio" name="li" checked="checked"/>女</label></li>
@@ -21,6 +21,7 @@
   export default{
       data(){
           return{
+            images:require("./img/peopledata1.png"),
             startTime: {
               time: ''
             },
@@ -32,7 +33,7 @@
               week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
               month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
               format: 'YYYY-MM-DD',
-              placeholder: 'when?',
+              placeholder: '出生年月日',
               inputStyle: {
                 'display': 'inline-block',
                 'padding': '6px',
@@ -72,15 +73,22 @@
             },
               {
                 type: 'fromto',
-                from: '2016-02-01',
-                to: '2016-02-20'
+                from: '1600-02-01',
+                to: '2030-02-20'
               }]
           }
       },
       components:{
       Datepicker:Datepicker
 
-      }
+      },
+    methods:{
+          change:function (event) {
+            var fileName = event.path[0].files[0].name
+            console.log(fileName)
+            this.images =require("./images/"+fileName)
+          }
+    }
   }
 </script>
 
@@ -113,6 +121,9 @@ border: 1px solid #e3e3e3;
 .z-cont>li:nth-child(1)>img{
 	vertical-align: bottom;
 	margin-right: 10px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
 }
 .z-cont>li:nth-child(1)>a{
 	color: #498E3D;
@@ -138,4 +149,20 @@ border: 1px solid #e3e3e3;
 	outline: none;
 	border-radius: 4px;
 }
+.send{
+  /*border:1px solid red;*/
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height:30px;
+  line-height: 30px;
+
+}
+  .spread{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    opacity:0;
+    width: 50px;
+  }
 </style>

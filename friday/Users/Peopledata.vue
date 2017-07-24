@@ -3,7 +3,7 @@
 	<div class="z-peopledata">
 			<h2>个人资料</h2>
 			<ul class="z-cont">
-				<li>当前头像：<img src="./img/peopledata1.png"><a href="">修改</a></li>
+				<li>当前头像：<img src="./img/peopledata1.png"><a href=""><input type="file">修改</a></li>
 				<li>昵称：<input type="text" /></li>
 				<li>性别：<label><input type="radio" name="li"/>男</label>
 					<label><input type="radio" name="li" checked="checked"/>女</label></li>
