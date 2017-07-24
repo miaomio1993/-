@@ -18,14 +18,15 @@ link.connect();
 
 //查询表
 app.get("/index",function (req, res) {
-  console.log(req.query);
+  var act=req.query.act;
+  switch (act){
+    case "count1":
+      link.query("SELECT * FROM product_list WHERE kind='水果'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+  }
 });
-
-
-
-
-//关闭
-link.end();
 
 
 app.listen(8080);
