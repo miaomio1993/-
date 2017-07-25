@@ -19,7 +19,7 @@
 				<input type="password" placeholder="密码" class="passWord"/>
 			</li>
 			<li>
-				<input type="text" placeholder="验证码" />
+				<input type="text" placeholder="验证码" class="yanzhengma"/>
         <div>
           <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
         </div>
@@ -122,6 +122,7 @@
             console.log($(".check1").prop("checked"))
             alert("点击自动登录")
           }else{
+            var yanzhengma=this.first+""+this.two+this.three+this.four
             this.$root.$emit("listen1", "会员登录")
             var that=this;
             $.ajax({
@@ -136,13 +137,21 @@
                   alert("不存在该用户,请先注册")
                 }
                 if (data.err == 2) {
-                  localStorage.userPhone = $(".userPhone").val();
-                  localStorage.passWord =  $(".passWord").val();
-                  window.location.href = "#/users"
-                  that.$root.$emit("userReg","1")
+                  if($(".yanzhengma").val()==yanzhengma) {
+                    localStorage.userPhone = $(".userPhone").val();
+                    localStorage.passWord = $(".passWord").val();
+                    window.location.href = "#/users"
+                    that.$root.$emit("userReg", "1")
+                  }else {
+                      alert("验证码有误")
+                  }
                 }
                 if (data.err == 3) {
-                  alert("密码有误,请点击忘记密码")
+                  if($(".yanzhengma").val()==yanzhengma) {
+                    alert("密码有误,请点击忘记密码")
+                  }else {
+                      alert("验证码有误")
+                  }
                 }
 
               }

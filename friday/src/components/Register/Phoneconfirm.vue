@@ -9,14 +9,14 @@
 				</p>
 			</li>
 			<li>
-				<input type="number" placeholder="请输入手机号" />
+				<input type="number" placeholder="请输入手机号" class="userPhone"/>
 				<span class="iconfont icon-duigou"></span>
 			</li>
 			<li>
-				<p><span>！</span>手机号码不正确，请重新输入</p>
+				<p v-if="turn"><span >！</span>手机号码不正确，请重新输入</p>
 			</li>
 			<li>
-				<input type="text" placeholder="验证码" />
+				<input type="text" placeholder="验证码"  class="yanzhengma"/>
         <div>
           <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
         </div>
@@ -55,6 +55,7 @@
 	export default{
 	    data(){
 	      return{
+	          turn:false,
           first:parseInt(Math.random(0,1)*10),
           two:parseInt(Math.random(0,1)*10),
           three:parseInt(Math.random(0,1)*10),
@@ -115,12 +116,35 @@
 
       },
 			change:function(){
-				this.$root.$emit("listen","会员登录")
+          var that=this;
+          var yanzhengma=this.first+""+this.two+this.three+this.four
+        if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+          this.turn = true
+        }else{
+			this.$root.$emit("listen","会员登录")
         $.ajax({
+            url:"api/confirm",
+            type:"get",
+            data:{
+              userPhone: $(".userPhone").val()
+            },
+            success:function (data) {
+                if (data.err==1){
+                    if($(".yanzhengma").val()==yanzhengma){
+                      localStorage.userPhone = $(".userPhone").val();
+                      window.location.href = "#/users"
+                      that.$root.$emit("userReg","1")
+                    }else {
+                       alert("验证码有误")
+                    }
 
+                }else {
+                    alert("不存在此号码")
+                }
+            }
         })
 
-			},
+			}},
 			change1:function(){
 				this.$root.$emit("listen1","会员注册")
 			},
@@ -179,10 +203,14 @@
 	top: 15px;
 	color: #498E3D;
 }
+.z-cont>li:nth-child(3){
+  position: relative;
+}
 .z-cont>li:nth-child(3)>	p{
 	color: red;
 	font-size: 12px;
 	line-height: 30px;
+  position: absolute;
 }
 .z-cont>li:nth-child(3)>p>span{
 	color: white;
@@ -194,6 +222,9 @@
 	background: red;
 	display: inline-block;
 
+}
+.z-cont>li:nth-child(4){
+  margin-top: 30px;
 }
 .z-cont>li:nth-child(4)>input{
 	width: 90px;
