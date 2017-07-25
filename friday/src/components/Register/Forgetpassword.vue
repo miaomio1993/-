@@ -7,28 +7,28 @@
 				</span>
 			</li>
 			<li>
-				<input type="number" placeholder="请输入手机号" />
+				<input type="number" placeholder="请输入手机号" class="userPhone"/>
 				<span class="iconfont icon-duigou"></span>
 			</li>
 			<li>
-				<p><span>！</span>手机号码不正确，请重新输入</p>
+				<p v-if="turn"><span >！</span>手机号码不正确，请重新输入</p>
 			</li>
 			<li>
-				<input type="text" placeholder="验证码" />
+				<input type="text" placeholder="验证码" class="yanzhengma"/>
         <div>
           <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
         </div>
         <a href="javascript:void(0)" @click="submit1">看不清楚换一张</a>
 			</li>
 			<li>
-				<input type="password" placeholder="请输入密码（6-20位号码字符）" />
+				<input type="password" placeholder="请输入密码（6-20位号码字符）" class="passWord" />
 			</li>
 			<li>
-				<input type="password" placeholder="请再次输入密码确认" />
+				<input type="password" placeholder="请再次输入密码确认" class="repassword" />
 			</li>
 
 			<li>
-				<input type="password" placeholder="手机验证码" />
+				<input type="password" placeholder="手机验证码" class="yanzhengma"/>
 				<button>获取验证码</button>
 			</li>
 
@@ -37,7 +37,7 @@
 			<li>
 			</li>
 			<li>
-				<a href="#/phoneconfirm" v-on:click="change">登录</a>
+				<a href="javascript:void(0)" v-on:click="change">登录</a>
 				<a href="#/applyfor" v-on:click="change1">会员注册</a>
 			</li>
 		</ul>
@@ -48,6 +48,7 @@
 	export default{
     data(){
       return{
+        turn:false,
         first:parseInt(Math.random(0,1)*10),
         two:parseInt(Math.random(0,1)*10),
         three:parseInt(Math.random(0,1)*10),
@@ -108,10 +109,57 @@
         this.randnum4=parseInt(Math.random(0,1)*900)
 
       },
-			change:function(){
+			change:function() {
 				this.$root.$emit("listen","会员登录")
+        var that=this;
+        var yanzhengma=this.first+""+this.two+this.three+this.four
+        if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+          this.turn = true
+        }else {
+          this.turn = false
+          if ($(".yanzhengma").val()!=yanzhengma) {
+                alert("验证码有误")
+          } else {
+            if (!(/^[a-zA-Z]{6,10}$/.test($(".passWord").val()))){
+              alert("密码格式有误")
+            }else {
+              if ($(".passWord").val()!=$(".repassword").val()){
+                alert("两次密码不一致")
+              }else {
+                $.ajax({
+                  url:"api/changepassword",
+                  type:"get",
+                  data:{
+                    userPhone:$(".userPhone").val(),
+                    passWord:that.password
+                  },
+                  success:function (data) {
+                    if (data.err==1){
+                      window.location.href = "#/phoneconfirm"
+                      setTimeout(function () {
+                        that.phone="";
+                        that.password="";
+                        that.again="";
+                      },2000)
 
-			},
+                    }
+                    if (data.err==2){
+                      alert("不存在此号码")
+                      setTimeout(function () {
+                        that.phone="";
+                        that.password="";
+                        that.again="";
+                      },1000)
+
+                    }
+                  }
+                })
+              }
+              }
+          }
+        }
+      }
+			,
 			change1:function(){
 				this.$root.$emit("listen1","会员注册")
 			},
@@ -164,10 +212,14 @@
 	top: 15px;
 	color: #498E3D;
 }
+.z-cont>li:nth-child(3){
+  position: relative;
+}
 .z-cont>li:nth-child(3)>	p{
 	color: red;
 	font-size: 12px;
 	line-height: 30px;
+  position: absolute;
 }
 .z-cont>li:nth-child(3)>p>span{
 	color: white;
@@ -179,6 +231,9 @@
 	background: red;
 	display: inline-block;
 
+}
+.z-cont>li:nth-child(4){
+  margin-top: 30px;
 }
 .z-cont>li:nth-child(5){
 	margin-top: 25px;

@@ -22,7 +22,7 @@
 				<input type="password" placeholder="请再次输入密码确认" class="repassword"/>
 			</li>
 			<li>
-				<input type="text" placeholder="验证码" />
+				<input type="text" placeholder="验证码" class="yanzhengma"/>
         <div>
           <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
         </div>
@@ -122,6 +122,7 @@
 
 			},
 			change1:function(){
+
         if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))){
            this.turn=true
         }else {
@@ -136,6 +137,7 @@
 
                         alert("请先阅读礼拜五用户协议")
                     }else {
+                      var yanzhengma=this.first+""+this.two+this.three+this.four
                       this.$root.$emit("listen1","会员注册")
                       var that = this
                       var userPhone1 = $(".userPhone").val();
@@ -151,15 +153,23 @@
                         },
                         success:function (data) {
                             console.log(data.err)
-                          if (data.err==2){
-                            localStorage.userPhone = userPhone1;
-                            localStorage.passWord = passWord1;
-                            window.location.href = "#/users";
-                            that.$root.$emit("userReg","1")
-                          }
                           if (data.err==1){
+                            if($(".yanzhengma").val()==yanzhengma) {
+                              localStorage.userPhone = userPhone1;
+                              localStorage.passWord = passWord1;
+                              window.location.href = "#/users";
+                              that.$root.$emit("userReg", "1")
+                            }else {
+                                alert("验证码有误")
+                            }
+                          }else {
+                            if($(".yanzhengma").val()==yanzhengma) {
                               alert("已经注册,请直接登录")
+                            }else {
+                                alert("验证码有误")
+                            }
                           }
+
                         }
                       })
                     }

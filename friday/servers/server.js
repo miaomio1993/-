@@ -30,18 +30,30 @@ app.get("/reg",function (req,res) {
   var reqObj = req.query;
   Model.find({userPhone:reqObj.userPhone},function (err,doc) {
     if (doc.length){
-     res.send({err:1})
-
+     res.send({err:2})
     }else {
       Model.create({userPhone:reqObj.userPhone,passWord:reqObj.passWord,score:0,money:0},function (err,doc) {
         if(!err){
-          res.send({err:2})
+          res.send({err:1})
         }
       })
     }
   })
 
 })
+
+//7月25 登录页面的改变
+app.get("/confirm",function (req,res) {
+  var reqObj = req.query;
+  Model.find({userPhone:reqObj.userPhone},function (err,doc) {
+    if (doc.length){
+      res.send({err:1})
+
+    }
+})
+})
+
+/*****************/
 
 
 app.get("/log",function (req,res) {
