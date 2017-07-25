@@ -40,10 +40,13 @@
           list:Array,
         },
         created:function () {
-          for(var i=0;i<this.list.length;i++){
-            this.total+=this.list[i].num*this.list[i].price;
-          }
-          this.$root.$emit("change",this.total);
+          setTimeout(function () {
+            for(var i=0;i<this.list.length;i++){
+              this.total+=this.list[i].num*this.list[i].price;
+            }
+            this.$root.$emit("change",this.total);
+          }.bind(this),500)
+
         },
         methods:{
             add:function (index) {
@@ -65,7 +68,30 @@
               this.$root.$emit("change",this.total);
             },
             del:function (index) {
-              this.list.splice(index,1);
+              var that=this;
+              var arr=sessionStorage.shoppingcarId.split("$");
+              arr.splice(index,1);
+              var str=arr.join("$");
+              $.ajax({
+                url:'api/shopingcarDel',
+                type:'get',
+                data:{
+                  userPhone:localStorage.userPhone,
+                  goods:str,
+                },
+                success:function (data) {
+                  if(data.err==1){
+                    sessionStorage.shoppingcarId=str;
+//                    console.log(str);
+                    that.list.splice(index,1);
+                    that.total=0;
+                    for(var i=0;i<that.list.length;i++){
+                      that.total+=that.list[i].num*that.list[i].price;
+                    }
+                    that.$root.$emit("change",that.total);
+                  }
+                }
+              })
             },
         }
     }
