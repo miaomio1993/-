@@ -60,7 +60,7 @@
         <div class="s-choose">
           <div class="s-selectNum">
             数量：<button @click="reduce">-</button><input v-model="buyNum" type="number"><button @click="add">+</button>件
-          </div><a href="javascript:void(0)">加入购物车</a><a href="javascript:void(0)" class="s-buy">立即购买</a>
+          </div><a href="javascript:void(0)" @click="addshoppingcar">加入购物车</a><a href="javascript:void(0)" class="s-buy">立即购买</a>
         </div>
         <div class="s-collect-share">
           <div class="s-collect" @click="collects">
@@ -101,9 +101,32 @@
             }
         },
         methods:{
+          addshoppingcar:function () {
+            var that=this;
+            if(localStorage.userPhone){
+              $.ajax({
+                url:'api/addshoppingcar',
+                type:'get',
+                data:{
+                  userPhone:localStorage.userPhone,
+                  goodsId:that.id,
+                },
+                success:function (data) {
+                  if(data.err==1){
+                    that.$root.$emit("addshoppingcar",1);
+                  }else if(data.err==2){
+                    var num=data.goods.split("$").length;
+                    that.$root.$emit("addshoppingcar",num);
+                  }
+                },
+              });
+            }else {
+              this.$root.$emit("login",true);
+            }
+          },
           tab:function (index) {
-              this.num=index;
-            },
+            this.num=index;
+          },
           prev:function () {
             if (this.ulLeft<0){
                 this.ulLeft+=110;
@@ -113,7 +136,7 @@
             var limit=-(this.imglist.length-4)*110
             if(this.ulLeft>limit){
               this.ulLeft-=110
-            }
+            };
           },
           move:function (e) {
             var l=e.layerX-100;

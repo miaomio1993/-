@@ -35,8 +35,24 @@
             sessionStorage.goodsId=id;
           },
           addShoppingcar:function (id) {
+            var that=this;
             if(localStorage.userPhone){
-
+              $.ajax({
+                url:'api/addshoppingcar',
+                type:'get',
+                data:{
+                  userPhone:localStorage.userPhone,
+                  goodsId:id,
+                },
+                success:function (data) {
+                  if(data.err==1){
+                    that.$root.$emit("addshoppingcar",1);
+                  }else if(data.err==2){
+                      var num=data.goods.split("$").length;
+                    that.$root.$emit("addshoppingcar",num);
+                  }
+                },
+              });
             }else {
               this.$root.$emit("login",true);
             }

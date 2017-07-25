@@ -19,14 +19,14 @@
     </div>
 
     <div class="s-right">
-      <a class="s-personal" href="#/users">
+      <a class="s-personal" href="javascript:void(0)" @click="gotouser">
         <span class="iconfont icon-geren-80-copy"></span>
         <b>个人中心</b>
       </a>
-      <a class="s-shopping-car" href="#/shoppingcar">
+      <a class="s-shopping-car" href="javascript:void(0)" @click="gotocar">
         <span class="iconfont icon-gouwuche"></span>
         <b>购物车</b>
-        <em v-if="shoppingNum>0">{{shoppingNum}}</em>
+        <em v-if="showShoppingcar">{{shoppingNum}}</em>
       </a>
     </div>
     <login v-if="isLog"></login>
@@ -39,21 +39,59 @@
         name: 'headercenter',
         data () {
             return {
-              shoppingNum:sessionStorage.shoppingNum||0,
+              shoppingNum:0,
               isLog:false,
+              showShoppingcar:false,
             }
-        },
-        created:function () {
-          this.$root.$on("login",this.getLogin);
         },
         components:{
             Login,
         },
-      methods:{
-        getLogin:function (data) {
-          this.isLog=true;
+        methods:{
+          getLogin:function (data) {
+            this.isLog=true;
+          },
+          shoppingcar:function (data) {
+            this.shoppingNum=data;
+            this.showShoppingcar=true;
+            console.log(this.shoppingNum)
+          },
+          gotocar:function () {
+            if(localStorage.userPhone){
+              this.$router.push({path:'/users'})
+            }else {
+              this.$root.$emit("login",true);
+            }
+          },
+          gotouser:function () {
+            if(localStorage.userPhone){
+              this.$router.push({path:'/shoppingcar'})
+            }else {
+              this.$root.$emit("login",true);
+            }
+          }
+        },
+        created:function () {
+          this.$root.$on("login",this.getLogin);
+          this.$root.$on("addshoppingcar",this.shoppingcar);
+          if(localStorage.userPhone){
+              var that=this;
+              $.ajax({
+                url:'/api/shoppingcar',
+                type:'get',
+                data:{
+                  act:'num',
+                  userPhone:localStorage.userPhone,
+                },
+                success:function (data) {
+                  that.shoppingNum=data.goods.split("$").length;
+                  if(that.shoppingNum>0){
+                      that.showShoppingcar=true;
+                  }
+                }
+              })
+          }
         }
-      }
     }
 </script>
 
