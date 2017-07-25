@@ -23,8 +23,10 @@
 			</li>
 			<li>
 				<input type="text" placeholder="验证码" />
-				<img src="./img/changepassword1.png"/>
-				<a href="JavaScript:void(0)">看不清楚换一张</a>
+        <div>
+          <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
+        </div>
+				<a href="JavaScript:void(0)" @click="submit1">看不清楚换一张</a>
 			</li>
 			<li>
 				<input type="password" placeholder="手机验证码" />
@@ -55,10 +57,66 @@
 	export default{
 	    data(){
 	       return{
-            turn:false
+            turn:false,
+           first:parseInt(Math.random(0,1)*10),
+           two:parseInt(Math.random(0,1)*10),
+           three:parseInt(Math.random(0,1)*10),
+           four:parseInt(Math.random(0,1)*10),
+           num1:parseInt(Math.random(0,1)*120),
+           num2:parseInt(Math.random(0,1)*5),
+           num3:parseInt(Math.random(0,1)*100),
+           num4:parseInt(Math.random(0,1)*5),
+           num5:parseInt(Math.random(0,1)*80),
+           num6:parseInt(Math.random(0,1)*5),
+           num7:parseInt(Math.random(0,1)*60),
+           num8:parseInt(Math.random(0,1)*5),
+           color1:"",
+           color2:"",
+           color3:"",
+           color4:"",
+           randnum1:parseInt(Math.random(0,1)*900),
+           randnum2:parseInt(Math.random(0,1)*900),
+           randnum3:parseInt(Math.random(0,1)*900),
+           randnum4:parseInt(Math.random(0,1)*900)
         }
       },
+    created:function () {
+      this.color1=this.randomColor()
+      this.color2=this.randomColor()
+      this.color3=this.randomColor()
+      this.color4=this.randomColor()
+    }
+    ,
 		methods:{
+      randomNumber:function (a,b) {
+        return parseInt(Math.random()*(b-a+1)+a)
+      },
+      randomColor:function () {
+        return "rgb("+this.randomNumber(0,255)+","+this.randomNumber(0,255)+","+this.randomNumber(0,255)+")"
+      },
+      submit1:function () {
+        this.first=parseInt(Math.random(0,1)*10);
+        this.two=parseInt(Math.random(0,1)*10);
+        this.three=parseInt(Math.random(0,1)*10);
+        this.four=parseInt(Math.random(0,1)*10);
+        this.num1=parseInt(Math.random(0,1)*120);
+        this.num2=parseInt(Math.random(0,1)*5);
+        this.num3=parseInt(Math.random(0,1)*100);
+        this.num4=parseInt(Math.random(0,1)*5);
+        this.num5=parseInt(Math.random(0,1)*80);
+        this.num6=parseInt(Math.random(0,1)*5);
+        this.num7=parseInt(Math.random(0,1)*60);
+        this.num8=parseInt(Math.random(0,1)*5);
+        this.color1=this.randomColor();
+        this.color2=this.randomColor();
+        this.color3=this.randomColor();
+        this.color4=this.randomColor();
+        this.randnum1=parseInt(Math.random(0,1)*900);
+        this.randnum2=parseInt(Math.random(0,1)*900);
+        this.randnum3=parseInt(Math.random(0,1)*900);
+        this.randnum4=parseInt(Math.random(0,1)*900)
+
+      },
 			change:function(){
 				this.$root.$emit("listen","会员登录")
 
@@ -264,5 +322,21 @@ display: inline-block;
 .z-cont>li:nth-child(11){
 	margin-left: 120px;
 	margin-top: 15px;
+}
+.z-cont>li:nth-child(6)>div{
+  display: inline-block;
+  position: relative;
+  height: 34px;
+  width: 79px;
+  background-image:url("./img/changepassword4.jpg");
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.z-cont>li:nth-child(6)>div>span{
+  color: white;
+  padding: 0 5px;
+  line-height: 34px;
+  opacity: 0.8;
+  display: inline-block;
 }
 </style>

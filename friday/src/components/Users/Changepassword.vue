@@ -8,8 +8,12 @@
 				<input type="text" placeholder="请再次输入密码确认" v-model="again" class="repassword"/>
 				<div class="z-yanzhengma">
 					<input type="text" placeholder="验证码"/>
-					<img src="./img/changepassword1.png" alt="" />
-					<span>看不清换一张</span>
+
+          <div>
+            <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
+          </div>
+					<!--<img src="./img/changepassword1.png" alt="" />-->
+					<span @click="submit1">看不清换一张</span>
 				</div>
 				<div class="z-gain">
 					<input type="text" placeholder="手机验证码"/>
@@ -32,10 +36,66 @@
             turn:false,
             phone:"",
             password:"",
-            again:""
+            again:"",
+            first:parseInt(Math.random(0,1)*10),
+            two:parseInt(Math.random(0,1)*10),
+            three:parseInt(Math.random(0,1)*10),
+            four:parseInt(Math.random(0,1)*10),
+            num1:parseInt(Math.random(0,1)*120),
+            num2:parseInt(Math.random(0,1)*5),
+            num3:parseInt(Math.random(0,1)*100),
+            num4:parseInt(Math.random(0,1)*5),
+            num5:parseInt(Math.random(0,1)*80),
+            num6:parseInt(Math.random(0,1)*5),
+            num7:parseInt(Math.random(0,1)*60),
+            num8:parseInt(Math.random(0,1)*5),
+            color1:"",
+            color2:"",
+            color3:"",
+            color4:"",
+            randnum1:parseInt(Math.random(0,1)*900),
+            randnum2:parseInt(Math.random(0,1)*900),
+            randnum3:parseInt(Math.random(0,1)*900),
+            randnum4:parseInt(Math.random(0,1)*900)
           }
       },
+    created:function () {
+      this.color1=this.randomColor()
+      this.color2=this.randomColor()
+      this.color3=this.randomColor()
+      this.color4=this.randomColor()
+    }
+    ,
     methods:{
+      randomNumber:function (a,b) {
+        return parseInt(Math.random()*(b-a+1)+a)
+      },
+      randomColor:function () {
+        return "rgb("+this.randomNumber(0,255)+","+this.randomNumber(0,255)+","+this.randomNumber(0,255)+")"
+      },
+      submit1:function () {
+        this.first=parseInt(Math.random(0,1)*10);
+        this.two=parseInt(Math.random(0,1)*10);
+        this.three=parseInt(Math.random(0,1)*10);
+        this.four=parseInt(Math.random(0,1)*10);
+        this.num1=parseInt(Math.random(0,1)*120);
+        this.num2=parseInt(Math.random(0,1)*5);
+        this.num3=parseInt(Math.random(0,1)*100);
+        this.num4=parseInt(Math.random(0,1)*5);
+        this.num5=parseInt(Math.random(0,1)*80);
+        this.num6=parseInt(Math.random(0,1)*5);
+        this.num7=parseInt(Math.random(0,1)*60);
+        this.num8=parseInt(Math.random(0,1)*5);
+        this.color1=this.randomColor();
+        this.color2=this.randomColor();
+        this.color3=this.randomColor();
+        this.color4=this.randomColor();
+        this.randnum1=parseInt(Math.random(0,1)*900);
+        this.randnum2=parseInt(Math.random(0,1)*900);
+        this.randnum3=parseInt(Math.random(0,1)*900);
+        this.randnum4=parseInt(Math.random(0,1)*900)
+
+      },
         submit:function () {
           var that=this;
           if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))){
@@ -188,6 +248,23 @@ border: 1px solid #e3e3e3;
 
   }
 .z-changesuccess>p{
+  display: inline-block;
+}
+
+.z-yanzhengma>div{
+  display: inline-block;
+  position: relative;
+  height: 43px;
+  width: 79px;
+  background-image: url("./img/changepassword4.jpg");
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.z-yanzhengma>div>span{
+  color: white;
+  padding: 0 5px;
+  line-height: 43px;
+  opacity: 0.8;
   display: inline-block;
 }
 </style>

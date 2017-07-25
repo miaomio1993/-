@@ -221,12 +221,12 @@ app.get("/peopledata",function (req,res) {
     if (doc.length) {
       Model2.update({userPhone:reqObj.userPhone},{$set:{image:reqObj.image,name:reqObj.name,gender:reqObj.gender,birthday:reqObj.birthday,phone:reqObj.phone,userPhone:reqObj.userPhone}},{multi:true},function (err) {
         if(!err){
-          console.log(1)
+          // console.log(1)
           res.send({err:1})
         }
       })
   }else {
-      console.log(2)
+      // console.log(2)
       Model2.create({image:reqObj.image,name:reqObj.name,gender:reqObj.gender,birthday:reqObj.birthday,phone:reqObj.phone,userPhone:reqObj.userPhone},function (err,doc) {
         if(!err){
           res.send({err:1})
