@@ -69,7 +69,9 @@
               this.userPhone=localStorage.userPhone;
             },
             quit:function () {
-              
+              localStorage.clear();
+              this.$router.push({path:"/"})
+              location.reload();
             }
 
         },

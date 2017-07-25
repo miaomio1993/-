@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4864e912-b1dd-4c60-9d99-4833559fbcc7" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/WiredTiger.wt" afterPath="$PROJECT_DIR$/friday/data2/WiredTiger.wt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/collection-5-353534181892911989.wt" afterPath="$PROJECT_DIR$/friday/data2/collection-5-353534181892911989.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/diagnostic.data/metrics.2017-07-24T23-26-42Z-00000" afterPath="$PROJECT_DIR$/friday/data2/diagnostic.data/metrics.2017-07-24T23-26-42Z-00000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/diagnostic.data/metrics.interim" afterPath="$PROJECT_DIR$/friday/data2/diagnostic.data/metrics.interim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/sizeStorer.wt" afterPath="$PROJECT_DIR$/friday/data2/sizeStorer.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/WiredTiger.turtle" afterPath="$PROJECT_DIR$/friday/data2/WiredTiger.turtle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/servers/server2.js" afterPath="$PROJECT_DIR$/friday/servers/server2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" afterPath="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Header/Headertop.vue" afterPath="$PROJECT_DIR$/friday/src/components/Header/Headertop.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-detail.vue" afterPath="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-detail.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar.vue" afterPath="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +23,8 @@
       <file leaf-file-name="Headertop.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="71" column="14" lean-forward="true" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+            <state relative-caret-position="527">
+              <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -52,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-detail.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
-              <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+              <caret line="85" column="39" lean-forward="false" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -61,8 +53,8 @@
       <file leaf-file-name="server2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="293" column="5" lean-forward="true" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
+            <state relative-caret-position="-169">
+              <caret line="293" column="5" lean-forward="false" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -72,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="57" column="12" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+              <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -452,12 +444,12 @@
       <workItem from="1500773278255" duration="19940000" />
       <workItem from="1500851684696" duration="19786000" />
       <workItem from="1500892191237" duration="5544000" />
-      <workItem from="1500938701800" duration="26439000" />
+      <workItem from="1500938701800" duration="27284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71709000" />
+    <option name="totallyTimeSpent" value="72554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -795,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="293" column="5" lean-forward="true" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
+        <state relative-caret-position="-169">
+          <caret line="293" column="5" lean-forward="false" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -804,7 +796,7 @@
     <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-detail.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
-          <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+          <caret line="85" column="39" lean-forward="false" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -820,15 +812,15 @@
     <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="57" column="12" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="71" column="14" lean-forward="true" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+        <state relative-caret-position="527">
+          <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
           <folding />
         </state>
       </provider>
