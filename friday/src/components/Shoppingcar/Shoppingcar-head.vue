@@ -5,7 +5,7 @@
         <img src="./img/logo.png" alt="">
       </a>
       <div class="s-flow">
-        <span class="select">我的购物车</span>&gt;<span>确认订单信息</span>&gt;<span>订单提交成功</span>
+        <span :class="num==1?'select':''">我的购物车</span>&gt;<span :class="num==2?'select':''">确认订单信息</span>&gt;<span :class="num==3?'select':''">订单提交成功</span>
       </div>
     </div>
   </div>
@@ -18,6 +18,9 @@
             return {
 
             }
+        },
+        props:{
+            num:Number,
         }
     }
 </script>

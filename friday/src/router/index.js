@@ -55,6 +55,8 @@ import Special from '@/components/Special/Special'
 //7.20添加的组件
 import Shoppingcar from '@/components/Shoppingcar/Shoppingcar'
 
+import Firmorder from '@/components/Shoppingcar/Firmorder'
+
 Vue.use(Router)
 
 export default new Router({
@@ -258,6 +260,11 @@ export default new Router({
           path: '/shoppingcar',
           name: 'Shoppingcar',
           component: Shoppingcar,
+        },
+        {
+          path: '/firmorder',
+          name: 'Firmorder',
+          component: Firmorder,
         },
         {
           path: '/register',

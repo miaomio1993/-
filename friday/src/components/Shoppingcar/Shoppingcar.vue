@@ -1,13 +1,13 @@
 <template>
   <div class="s-shoppingcar-wrap">
-    <shoppingcarhead></shoppingcarhead>
+    <shoppingcarhead :num="1"></shoppingcarhead>
     <div class="s-shoppingcar">
       <div class="s-shoppingcar-title">
         <span class="iconfont icon-gouwuche"></span>购物车
       </div>
       <shoppingcardetail :list="carList"></shoppingcardetail>
       <div class="s-total">
-        商品总计：<span>￥<i>{{total}}</i></span><a href="javascript:void(0)">立即购买</a>
+        商品总计：<span>￥<i>{{total}}</i></span><a href="#/firmorder">立即购买</a>
       </div>
     </div>
   </div>
