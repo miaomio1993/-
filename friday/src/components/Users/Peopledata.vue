@@ -4,13 +4,13 @@
 			<h2>个人资料</h2>
 			<ul class="z-cont">
 				<li>当前头像：<img :src="images"><a href="javascript:void(0)" class="send"><input type="file" class="spread" @change="change($event)">修改</a></li>
-				<li>昵称：<input type="text" /></li>
-				<li>性别：<label><input type="radio" name="li"/>男</label>
-					<label><input type="radio" name="li" checked="checked"/>女</label></li>
+				<li>昵称：<input type="text" v-model="name"/></li>
+				<li>性别：<label><input type="radio" name="li" class="boy"/>男</label>
+					<label><input type="radio" name="li" class="girl"/>女</label></li>
 
-				<li>生日：<datepicker :date="startTime" :option="option" :limit="limit"></datepicker><br /></li>
-				<li>手机：<input type="text" /><a href="#/peopledatabind1">更换手机</a></li>
-				<li><button>确认提交</button></li>
+				<li>生日：<datepicker :date="startTime" :option="option" :limit="limit" @change="date"></datepicker><br /></li>
+				<li>手机：<input type="text" v-model="phone"/><a href="#/peopledatabind1">更换手机</a></li>
+				<li><button @click="sure">确认提交</button></li>
 			</ul>
 	</div>
 </div>
@@ -22,6 +22,10 @@
       data(){
           return{
             images:require("./img/peopledata1.png"),
+            name:"",
+            date1:"",
+            phone:"",
+            gender:"",
             startTime: {
               time: ''
             },
@@ -82,13 +86,71 @@
       Datepicker:Datepicker
 
       },
+    created:function () {
+          var that=this
+      $.ajax({
+        url:"api/people",
+        type:"get",
+        data:{
+          userPhone:localStorage.userPhone
+        },
+        success:function (data) {
+          that.images=data.image
+          that.name=data.name;
+          that.gender=data.gender;
+          that.option.placeholder=data.birthday;
+          that.phone=data.phone;
+          if(data.gender=="男"){
+            $(".boy").prop("checked",true)
+          }else {
+            $(".girl").prop("checked",true)
+          }
+
+
+        }
+      })
+    },
     methods:{
+          date:function (data) {
+            this.date1=data
+          },
           change:function (event) {
             var fileName = event.path[0].files[0].name
             console.log(fileName)
             this.images =require("./images/"+fileName)
+          },
+          sure:function () {
+              var that = this
+              if ($(".boy").prop("checked")){
+                    this.gender="男"
+              }else {
+                  this.gender="女"
+              }
+            $.ajax({
+              url:"api/peopledata",
+              type:"get",
+              data:{
+                  image:that.images,
+                  name:that.name,
+                  gender:that.gender,
+                  birthday:that.date1,
+                  phone:that.phone,
+                  userPhone:localStorage.userPhone
+              },
+              success:function (data) {
+                  if (data.err==1){
+                     that.name=""
+                      that.gender=""
+                     that.data1=""
+                     that.phone=""
+                    that.option.placeholder="出生年月日";
+                    $(".boy").prop("checked",false)
+                    $(".girl").prop("checked",false)
+                  }
+              }
+            })
           }
-    }
+      }
   }
 </script>
 
@@ -129,11 +191,12 @@ border: 1px solid #e3e3e3;
 	color: #498E3D;
 }
 .z-cont>li>input{
-	width: 176px;
+	width: 146px;
 	height: 38px;
 	background: #e3e3e3;
 	outline: none;
 	border: none;
+  padding: 0 15px;
 }
 .z-cont>li:nth-child(5)>a{
 	color: #498E3D;

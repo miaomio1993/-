@@ -47,7 +47,6 @@
         		Distpicker:Distpicker
         },
         created:function () {
-          var that = this;
           this.$root.$on("selected",this.way)
         },
         methods:{

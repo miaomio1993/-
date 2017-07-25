@@ -200,4 +200,51 @@ app.get("/changepassword",function (req,res) {
     }
   })
 })
+
+
+//个人资料的后台
+var userSchema2 = new mongoose.Schema({
+  image:{type:String},
+  name:{type:String,default:""},
+  gender:{type:String,default:""},
+  birthday:{type:String,default:""},
+  phone:{type:String,default:""},
+  userPhone:{type:String,default:""},
+
+},{collection:"peopledata"});
+
+var Model2 = db.model("peopledata",userSchema2);
+app.get("/peopledata",function (req,res) {
+  var reqObj = req.query;
+  Model2.find({userPhone:reqObj.userPhone}, function (err, doc) {
+    console.log(doc.length)
+    if (doc.length) {
+      Model2.update({userPhone:reqObj.userPhone},{$set:{image:reqObj.image,name:reqObj.name,gender:reqObj.gender,birthday:reqObj.birthday,phone:reqObj.phone,userPhone:reqObj.userPhone}},{multi:true},function (err) {
+        if(!err){
+          console.log(1)
+          res.send({err:1})
+        }
+      })
+  }else {
+      console.log(2)
+      Model2.create({image:reqObj.image,name:reqObj.name,gender:reqObj.gender,birthday:reqObj.birthday,phone:reqObj.phone,userPhone:reqObj.userPhone},function (err,doc) {
+        if(!err){
+          res.send({err:1})
+        }
+      })
+    }
+  })
+
+})
+
+app.get("/people",function (req,res) {
+  var reqObj = req.query;
+  Model2.find({userPhone:reqObj.userPhone}, function (err, doc) {
+    if (doc.length) {
+      // console.log(doc)
+      res.send({image:doc[0].image,name:doc[0].name,gender:doc[0].gender,birthday:doc[0].birthday,phone:doc[0].phone})
+    }
+  })
+})
+
 app.listen(8080)
