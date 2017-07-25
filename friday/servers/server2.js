@@ -282,7 +282,16 @@ app.get('/shoppingcar',function (req, res) {
       res.send({err:1,goods:goods});
     }
   });
+});
 
+app.get('/shopingcarDel',function (req, res) {
+  var goods=req.query.goods;
+  var userPhone=req.query.userPhone;
+  link.query("UPDATE shoppingcar SET goods='"+goods+"' WHERE userPhone="+userPhone,function (err,result) {
+    if (!err){
+    res.send({err:1});
+    }
+  });
 });
 
 app.listen(8080);

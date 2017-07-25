@@ -54,18 +54,18 @@
           shoppingcar:function (data) {
             this.shoppingNum=data;
             this.showShoppingcar=true;
-            console.log(this.shoppingNum)
+//            console.log(this.shoppingNum)
           },
           gotocar:function () {
             if(localStorage.userPhone){
-              this.$router.push({path:'/users'})
+              this.$router.push({path:'/shoppingcar'})
             }else {
               this.$root.$emit("login",true);
             }
           },
           gotouser:function () {
             if(localStorage.userPhone){
-              this.$router.push({path:'/shoppingcar'})
+              this.$router.push({path:'/users'})
             }else {
               this.$root.$emit("login",true);
             }

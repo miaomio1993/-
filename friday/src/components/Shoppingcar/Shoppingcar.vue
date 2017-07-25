@@ -22,27 +22,27 @@
           return {
             total:0,
             carList:[
-              {
-                img:require('./img/shoppingcar-detail1.png'),
-                name:"云南蒙自石榴8个装",
-                kind:"8个装",
-                price:569,
-                num:1,
-              },
-              {
-                img:require('./img/shoppingcar-detail1.png'),
-                name:"云南蒙自石榴8个装",
-                kind:"8个装",
-                price:122,
-                num:2,
-              },
-              {
-                img:require('./img/shoppingcar-detail1.png'),
-                name:"云南蒙自石榴8个装",
-                kind:"8个装",
-                price:233,
-                num:3,
-              }
+//              {
+//                img:require('./img/shoppingcar-detail1.png'),
+//                name:"云南蒙自石榴8个装",
+//                kind:"8个装",
+//                price:569,
+//                num:1,
+//              },
+//              {
+//                img:require('./img/shoppingcar-detail1.png'),
+//                name:"云南蒙自石榴8个装",
+//                kind:"8个装",
+//                price:122,
+//                num:2,
+//              },
+//              {
+//                img:require('./img/shoppingcar-detail1.png'),
+//                name:"云南蒙自石榴8个装",
+//                kind:"8个装",
+//                price:233,
+//                num:3,
+//              }
             ]
           }
         },
@@ -51,7 +51,38 @@
           Shoppingcardetail,
         },
         created:function () {
-          this.$root.$on("change",this.changes)
+          this.$root.$on("change",this.changes);
+          var that=this;
+          $.ajax({
+            url:'api/shoppingcar',
+            type:'get',
+            data:{
+              userPhone:localStorage.userPhone,
+              act:'num',
+            },
+            success:function (data) {
+              sessionStorage.shoppingcarId=data.goods;
+              var arr=data.goods.split('$');
+              for(var i=0;i<arr.length;i++){
+                $.ajax({
+                  url:'api/detail',
+                  type:'get',
+                  data:{
+                    id:arr[i],
+                  },
+                  success:function (data) {
+                    that.carList.push({
+                      img:data.imglist[0],
+                      name:data.name,
+                      kind:"500g",
+                      price:data.newPrice,
+                      num:1,
+                    })
+                  }
+                })
+              }
+            }
+          })
         },
         methods:{
           changes:function (data) {

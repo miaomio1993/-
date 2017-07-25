@@ -17,8 +17,8 @@
           </div>
           <div id="s-user" v-if="isLogin">
             <span>您好，</span>
-            <a href="javascript:void(0)" class="s-user">{{userPhone}}</a>
-            <a href="javascript:void(0)" class="s-quit">退出</a>
+            <a href="#/users" class="s-user">{{userPhone}}</a>
+            <a href="javascript:void(0)" class="s-quit" @click="quit">退出</a>
           </div>
           <div id="s-login" v-if="!isLogin">
             <a href="#/login" class="s-login">登录</a>
@@ -68,6 +68,9 @@
               this.isLogin=localStorage.userPhone;
               this.userPhone=localStorage.userPhone;
             },
+            quit:function () {
+              
+            }
 
         },
         components:{
