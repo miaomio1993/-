@@ -3,9 +3,9 @@
 		<div class="z-changepassword">
 			<h2>修改密码</h2>
 			<div class="z-password">
-				<input type="text" placeholder="请输入电话号码" v-model="phone" class="userPhone"/>
-				<input type="text" placeholder="请输入密码（6-20位号码字符）" v-model="password" class="passWord"/>
-				<input type="text" placeholder="请再次输入密码确认" v-model="again" class="repassword"/>
+				<input type="number" placeholder="请输入电话号码" v-model="phone" class="userPhone"/>
+				<input type="password" placeholder="请输入密码（6-20位号码字符）" v-model="password" class="passWord"/>
+				<input type="password" placeholder="请再次输入密码确认" v-model="again" class="repassword"/>
 				<div class="z-yanzhengma">
 					<input type="text" placeholder="验证码"/>
 
@@ -66,75 +66,79 @@
       this.color4=this.randomColor()
     }
     ,
-    methods:{
-      randomNumber:function (a,b) {
-        return parseInt(Math.random()*(b-a+1)+a)
+    methods: {
+      randomNumber: function (a, b) {
+        return parseInt(Math.random() * (b - a + 1) + a)
       },
-      randomColor:function () {
-        return "rgb("+this.randomNumber(0,255)+","+this.randomNumber(0,255)+","+this.randomNumber(0,255)+")"
+      randomColor: function () {
+        return "rgb(" + this.randomNumber(0, 255) + "," + this.randomNumber(0, 255) + "," + this.randomNumber(0, 255) + ")"
       },
-      submit1:function () {
-        this.first=parseInt(Math.random(0,1)*10);
-        this.two=parseInt(Math.random(0,1)*10);
-        this.three=parseInt(Math.random(0,1)*10);
-        this.four=parseInt(Math.random(0,1)*10);
-        this.num1=parseInt(Math.random(0,1)*120);
-        this.num2=parseInt(Math.random(0,1)*5);
-        this.num3=parseInt(Math.random(0,1)*100);
-        this.num4=parseInt(Math.random(0,1)*5);
-        this.num5=parseInt(Math.random(0,1)*80);
-        this.num6=parseInt(Math.random(0,1)*5);
-        this.num7=parseInt(Math.random(0,1)*60);
-        this.num8=parseInt(Math.random(0,1)*5);
-        this.color1=this.randomColor();
-        this.color2=this.randomColor();
-        this.color3=this.randomColor();
-        this.color4=this.randomColor();
-        this.randnum1=parseInt(Math.random(0,1)*900);
-        this.randnum2=parseInt(Math.random(0,1)*900);
-        this.randnum3=parseInt(Math.random(0,1)*900);
-        this.randnum4=parseInt(Math.random(0,1)*900)
+      submit1: function () {
+        this.first = parseInt(Math.random(0, 1) * 10);
+        this.two = parseInt(Math.random(0, 1) * 10);
+        this.three = parseInt(Math.random(0, 1) * 10);
+        this.four = parseInt(Math.random(0, 1) * 10);
+        this.num1 = parseInt(Math.random(0, 1) * 120);
+        this.num2 = parseInt(Math.random(0, 1) * 5);
+        this.num3 = parseInt(Math.random(0, 1) * 100);
+        this.num4 = parseInt(Math.random(0, 1) * 5);
+        this.num5 = parseInt(Math.random(0, 1) * 80);
+        this.num6 = parseInt(Math.random(0, 1) * 5);
+        this.num7 = parseInt(Math.random(0, 1) * 60);
+        this.num8 = parseInt(Math.random(0, 1) * 5);
+        this.color1 = this.randomColor();
+        this.color2 = this.randomColor();
+        this.color3 = this.randomColor();
+        this.color4 = this.randomColor();
+        this.randnum1 = parseInt(Math.random(0, 1) * 900);
+        this.randnum2 = parseInt(Math.random(0, 1) * 900);
+        this.randnum3 = parseInt(Math.random(0, 1) * 900);
+        this.randnum4 = parseInt(Math.random(0, 1) * 900)
 
       },
-        submit:function () {
-          var that=this;
-          if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))){
-              alert("电话号码有误")
-          }else {
+      submit: function () {
+        var that = this;
+        var yanzhengma = this.first + "" + this.two + this.three + this.four
+        if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+          alert("电话号码有误")
+        } else {
+          if ($(".yanzhengma").val() != yanzhengma) {
+            alert("验证码有误")
+          } else {
             if (!(/^[a-zA-Z]{6,10}$/.test($(".passWord").val()))) {
               alert("密码格式有误")
             } else {
               if ($(".passWord").val() != $(".repassword").val()) {
                 alert("两次密码不一致")
-              }else {
+              } else {
 
                 $.ajax({
-                  url:"api/changepassword",
-                  type:"get",
-                  data:{
-                     userPhone:that.phone,
-                      passWord:that.password
+                  url: "api/changepassword",
+                  type: "get",
+                  data: {
+                    userPhone: that.phone,
+                    passWord: that.password
                   },
-                  success:function (data) {
-                      if (data.err==1){
-                        that.turn=true
-                        setTimeout(function () {
-                          that.phone="";
-                          that.password="";
-                          that.again="";
-                          that.turn=false
-                        },2000)
+                  success: function (data) {
+                    if (data.err == 1) {
+                      that.turn = true
+                      setTimeout(function () {
+                        that.phone = "";
+                        that.password = "";
+                        that.again = "";
+                        that.turn = false
+                      }, 2000)
 
-                      }
-                      if (data.err==2){
-                          alert("不存在此号码")
-                        setTimeout(function () {
-                          that.phone="";
-                          that.password="";
-                          that.again="";
-                        },1000)
+                    }
+                    if (data.err == 2) {
+                      alert("不存在此号码")
+                      setTimeout(function () {
+                        that.phone = "";
+                        that.password = "";
+                        that.again = "";
+                      }, 1000)
 
-                      }
+                    }
                   }
                 })
 
@@ -142,6 +146,7 @@
             }
           }
         }
+      }
     }
   }
 </script>
