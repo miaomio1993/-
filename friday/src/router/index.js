@@ -58,6 +58,7 @@ import Shoppingcar from '@/components/Shoppingcar/Shoppingcar'
 import Firmorder from '@/components/Shoppingcar/Firmorder'
 import SubmitForm from '@/components/SubmitForm/SubmitForm'
 import TotalSuccess from '@/components/TotalCity/TotalSuccess.vue'
+import Searchunfind from '@/components/Search/Searchunfind.vue'
 
 Vue.use(Router)
 
@@ -131,6 +132,11 @@ export default new Router({
               path: '/search',
               name: 'Search',
               component: Search,
+            },
+            {
+              path: '/searchunfind',
+              name: 'Searchunfind',
+              component: Searchunfind,
             },
             {
               path: '/users',

@@ -90,7 +90,7 @@ app.get("/mymoney",function (req,res) {
   Model.update({userPhone:reqObj.userPhone},{$set:{money:reqObj.money}},{multi:true},function (err) {
     if (!err){
       Model.find({userPhone:reqObj.userPhone},function (err,doc) {
-        console.log(doc)
+        // console.log(doc)
         res.send({money:doc[0].money})
       })
     }
@@ -104,7 +104,7 @@ app.get("/scoreorder",function (req,res) {
   Model.update({userPhone:reqObj.userPhone},{$set:{score:reqObj.score}},{multi:true},function (err) {
     if (!err){
       Model.find({userPhone:reqObj.userPhone},function (err,doc) {
-        console.log(doc)
+        // console.log(doc)
         res.send({score:doc[0].score})
       })
     }
@@ -192,7 +192,7 @@ app.get("/area",function (req,res) {
   var reqObj = req.query;
   Model1.find({userPhone:reqObj.userPhone},function (err,doc) {
     if (!err){
-        console.log(doc)
+        // console.log(doc)
         res.send({data:doc})
     }
   })
@@ -257,6 +257,155 @@ app.get("/people",function (req,res) {
       res.send({image:doc[0].image,name:doc[0].name,gender:doc[0].gender,birthday:doc[0].birthday,phone:doc[0].phone})
     }
   })
-})
+});
+
+
+
+//连接mysql
+var mysql=require("mysql");
+var link=mysql.createConnection({
+  host:"localhost",
+  user:"root",
+  password:"",
+  database:"Tenseven"
+});
+link.connect();
+
+//查询表
+app.get("/index",function (req, res) {
+  var act=req.query.act;
+  switch (act){
+    case "count1":
+      link.query("SELECT * FROM product_list WHERE kind='水果'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+    case "count2":
+      link.query("SELECT * FROM product_list WHERE kind='海鲜'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+    case "count3":
+      link.query("SELECT * FROM product_list WHERE kind='肉类'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+    case "count4":
+      link.query("SELECT * FROM product_list WHERE kind='速食'",function (err,rows,fields) {
+        res.send(rows);
+      });
+      break;
+  };
+});
+
+app.get("/detail",function (req, res) {
+  var id=req.query.id;
+  link.query("SELECT * FROM product_list WHERE id="+id,function (err,rows,fields) {
+    // console.log(rows[0].detailImg.split("$"));
+    var data={
+      id:rows[0].id,
+      oldPrice:rows[0].oldPrice,
+      newPrice:rows[0].newPrice,
+      detail:rows[0].detail,
+      imglist:rows[0].detailImg.split("$"),
+      name:rows[0].name,
+    };
+    res.send(data);
+  });
+
+});
+
+app.get("/addshoppingcar",function (req, res) {
+  var userPhone=req.query.userPhone;
+  var goodsId=req.query.goodsId;
+  link.query("SELECT * FROM shoppingcar WHERE userPhone="+userPhone,function (err,rows,fields) {
+    if(rows.length==0){
+      link.query("INSERT INTO shoppingcar(userPhone,goods) VALUES("+userPhone+", "+goodsId+")",function (err,result) {
+        if(!err){
+          res.send({err:1});
+        }
+      })
+    }else {
+      var goods=rows[0].goods+"$"+goodsId;
+      link.query("UPDATE shoppingcar SET goods='"+goods+"' WHERE userPhone="+userPhone,function (err,result) {
+        if(!err){
+          res.send({err:2,goods:goods});
+        }
+      });
+    }
+  });
+});
+
+app.get('/shoppingcar',function (req, res) {
+  var act=req.query.act;
+  var userPhone=req.query.userPhone;
+  link.query("SELECT * FROM shoppingcar WHERE userPhone="+userPhone,function (err,rows,fields) {
+    if (act=='num'){
+      if(rows.length>0){
+        var goods=rows[0].goods;
+        res.send({err:1,goods:goods});
+      }
+
+    }
+  });
+});
+
+app.get('/shopingcarDel',function (req, res) {
+  var goods=req.query.goods;
+  var userPhone=req.query.userPhone;
+  link.query("UPDATE shoppingcar SET goods='"+goods+"' WHERE userPhone="+userPhone,function (err,result) {
+    if (!err){
+      res.send({err:1});
+    }
+  });
+});
+
+app.get('/delshoppingcar',function (req, res) {
+  var userPhone=req.query.userPhone;
+  link.query("DELETE FROM shoppingcar where userPhone="+userPhone,function (err,result) {
+    if (!err){
+      res.send({err:1});
+    }
+  });
+});
+
+app.get('/search',function (req, res) {
+  var search=req.query.search;
+  link.query("SELECT * FROM product_list WHERE kind like '%"+search+"%'",function (err,rows,fields) {
+    if (!err){
+      res.send({err:1,list:rows});
+    }
+  });
+});
+
+app.get('/searchfilter',function (req, res) {
+  var search=req.query.search;
+  var act=req.query.act;
+  switch (act){
+    case '4':
+    case '1':
+      link.query("SELECT * FROM product_list WHERE kind like '%"+search+"%'",function (err,rows,fields) {
+        if (!err){
+          res.send({err:1,list:rows});
+        }
+      });
+      break;
+    case '2':
+      link.query("SELECT * FROM product_list WHERE kind like '%"+search+"%' ORDER BY newPrice ASC",function (err,rows,fields) {
+        if (!err){
+          res.send({err:1,list:rows});
+        }
+      });
+      break;
+    case '3':
+      link.query("SELECT * FROM product_list WHERE kind like '%"+search+"%' ORDER BY newPrice DESC",function (err,rows,fields) {
+        if (!err){
+          res.send({err:1,list:rows});
+        }
+      });
+      break;
+  }
+
+});
 
 app.listen(8080)

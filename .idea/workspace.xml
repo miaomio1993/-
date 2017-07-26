@@ -2,7 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4864e912-b1dd-4c60-9d99-4833559fbcc7" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data2/diagnostic.data/metrics.interim" afterPath="$PROJECT_DIR$/friday/data2/diagnostic.data/metrics.interim" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Addaddress.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Address.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Bill.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Cardchange.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Changepassword.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Feedback.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Lately.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Myaccound.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Myhiddren.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Mymoney.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Myorder.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Myscore.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Mywords.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Orderdetail.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Orderspeak.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Peopledata.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Peopledatabind1.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Peopledatabind2.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Peopledatabind3.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Scoredetail.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Scoreorder.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Users.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/Wordsdetail.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/address1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/changepassword1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/lately1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccound9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myaccount.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/mymoney.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myorder1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/myorder2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/orderspeak1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/peopledata1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/scoredetail1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/img/scoreorder1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/v-distpicker/Distpicker.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/v-distpicker/districts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/v-distpicker/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/screenshot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/vue-datepicker-1.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/vue-datepicker-es6.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/vue-datepicker.es6-1.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/Users/vue-datepicker/vue-datepicker.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/friday/data/journal/WiredTigerLog.0000000008" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/WiredTiger.wt" afterPath="$PROJECT_DIR$/friday/data/WiredTiger.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/collection-0--2627111794456643642.wt" afterPath="$PROJECT_DIR$/friday/data/collection-0--2627111794456643642.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/collection-0--4142259196078897590.wt" afterPath="$PROJECT_DIR$/friday/data/collection-0--4142259196078897590.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/collection-0-2869112543513188592.wt" afterPath="$PROJECT_DIR$/friday/data/collection-0-2869112543513188592.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/collection-7--2627111794456643642.wt" afterPath="$PROJECT_DIR$/friday/data/collection-7--2627111794456643642.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/index-1--2627111794456643642.wt" afterPath="$PROJECT_DIR$/friday/data/index-1--2627111794456643642.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/sizeStorer.wt" afterPath="$PROJECT_DIR$/friday/data/sizeStorer.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/WiredTiger.turtle" afterPath="$PROJECT_DIR$/friday/data/WiredTiger.turtle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/data/mongod.lock" afterPath="$PROJECT_DIR$/friday/data/mongod.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/servers/server.js" afterPath="$PROJECT_DIR$/friday/servers/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" afterPath="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue" afterPath="$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Search/Search.vue" afterPath="$PROJECT_DIR$/friday/src/components/Search/Search.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Search/Searchunfind.vue" afterPath="$PROJECT_DIR$/friday/src/components/Search/Searchunfind.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/components/Users/Changepassword.vue" afterPath="$PROJECT_DIR$/friday/src/components/Users/Changepassword.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friday/src/router/index.js" afterPath="$PROJECT_DIR$/friday/src/router/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,90 +88,72 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Headertop.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1711">
-              <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/friday/src/router/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+            <state relative-caret-position="597">
+              <caret line="137" column="35" lean-forward="false" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
               <folding>
-                <element signature="e#3127#7853#0" expanded="false" />
-                <element signature="e#3141#3242#0" expanded="false" />
-                <element signature="e#4233#7826#0" expanded="false" />
-                <element signature="e#8446#9145#0" expanded="false" />
+                <element signature="e#2253#2315#0" expanded="true" />
+                <element signature="e#3205#3306#0" expanded="false" />
+                <element signature="e#4438#8031#0" expanded="false" />
+                <element signature="e#8651#9350#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shoppingcar.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar.vue">
+      <file leaf-file-name="Searchunfind.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Searchunfind.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
-              <folding>
-                <element signature="e#459#535#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Firmorder.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Firmorder.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1245">
-              <caret line="76" column="37" lean-forward="false" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
-              <folding>
-                <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#3793#3869#0" expanded="true" />
-                <element signature="e#5404#5848#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TotalSuccess.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/TotalCity/TotalSuccess.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1138">
-              <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+            <state relative-caret-position="58">
+              <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubmitForm.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/SubmitForm/SubmitForm.vue">
+      <file leaf-file-name="Headercenter.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="31" />
+            <state relative-caret-position="789">
+              <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Login.vue">
+      <file leaf-file-name="Search.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Search.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3889">
-              <caret line="182" column="14" lean-forward="false" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
+            <state relative-caret-position="301">
+              <caret line="155" column="29" lean-forward="false" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
+              <folding>
+                <element signature="e#3245#3841#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/friday/servers/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="392" column="13" lean-forward="false" selection-start-line="392" selection-start-column="13" selection-end-line="392" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pass</find>
+      <find>.</find>
+      <find>.g</find>
+      <find>.g-le</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,22 +164,25 @@
         <option value="$PROJECT_DIR$/friday/build/dev-server.js" />
         <option value="$PROJECT_DIR$/friday/src/main.js" />
         <option value="$PROJECT_DIR$/friday/index.html" />
-        <option value="$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Register/Applyfor.vue" />
-        <option value="$PROJECT_DIR$/friday/src/components/Search/Search.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Search/Login.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Index/Countlist.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Detail/Detailtop.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-detail.vue" />
-        <option value="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Header/Headertop.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-head.vue" />
         <option value="$PROJECT_DIR$/friday/src/components/Shoppingcar/Firmorder.vue" />
-        <option value="$PROJECT_DIR$/friday/src/router/index.js" />
         <option value="$PROJECT_DIR$/friday/src/components/TotalCity/TotalSuccess.vue" />
-        <option value="$PROJECT_DIR$/friday/src/components/SubmitForm/SubmitForm.vue" />
         <option value="$PROJECT_DIR$/friday/servers/server2.js" />
+        <option value="$PROJECT_DIR$/friday/src/components/Users/Changepassword.vue" />
+        <option value="$PROJECT_DIR$/friday/src/components/Search/Searchunfind.vue" />
+        <option value="$PROJECT_DIR$/friday/src/router/index.js" />
+        <option value="$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue" />
+        <option value="$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue" />
+        <option value="$PROJECT_DIR$/friday/src/components/SubmitForm/SubmitForm.vue" />
+        <option value="$PROJECT_DIR$/friday/src/components/Search/Search.vue" />
+        <option value="$PROJECT_DIR$/friday/servers/server.js" />
       </list>
     </option>
   </component>
@@ -146,8 +202,8 @@
     <handled-path value="$PROJECT_DIR$/friday/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
-    <option name="y" value="23" />
+    <option name="x" value="13" />
+    <option name="y" value="27" />
     <option name="width" value="1724" />
     <option name="height" value="977" />
   </component>
@@ -195,220 +251,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="router" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Totalform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TotalCity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SubmitForm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Shoppingcar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bestTeam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friday" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="servers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.server2.js">
+  <component name="RunManager" selected="Node.js.server.js">
     <configuration default="false" name="server2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server2.js" working-dir="$PROJECT_DIR$/friday/servers">
       <method />
     </configuration>
@@ -519,8 +365,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.server2.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.server.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.server.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.server2.js" />
       </list>
     </recent_temporary>
   </component>
@@ -539,11 +385,12 @@
       <workItem from="1500892191237" duration="5544000" />
       <workItem from="1500938701800" duration="32817000" />
       <workItem from="1501024643169" duration="12443000" />
+      <workItem from="1501039628603" duration="11522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90530000" />
+    <option name="totallyTimeSpent" value="102052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -555,7 +402,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="23" width="1724" height="977" extended-state="0" />
+    <frame x="13" y="27" width="1724" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20199648" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -565,8 +412,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18870057" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16271186" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -576,7 +424,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +441,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/friday/src/router/index.js</url>
-          <line>280</line>
+          <line>286</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -603,29 +450,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8439">
-          <caret line="291" column="22" lean-forward="true" selection-start-line="291" selection-start-column="22" selection-end-line="291" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-detail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="85" column="39" lean-forward="false" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countlist.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headertop.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2030">
@@ -798,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,20 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="199" column="13" lean-forward="true" selection-start-line="199" selection-start-column="13" selection-end-line="199" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Search.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="73" column="12" lean-forward="false" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -851,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countlist.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Detail/Detailtop.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
@@ -873,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Totalform/Firmorder.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
@@ -887,20 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friday/servers/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1010">
-          <caret line="197" column="13" lean-forward="true" selection-start-line="197" selection-start-column="13" selection-end-line="197" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar-head.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="7" column="78" lean-forward="false" selection-start-line="7" selection-start-column="78" selection-end-line="7" selection-end-column="78" />
-          <folding>
-            <element signature="e#291#295#1" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -908,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="51" column="12" lean-forward="false" selection-start-line="51" selection-start-column="12" selection-end-line="68" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,36 +706,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Shoppingcar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="1595">
+          <caret line="56" column="34" lean-forward="false" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
           <folding>
-            <element signature="e#459#535#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-          <folding>
-            <element signature="e#3127#7853#0" expanded="false" />
-            <element signature="e#3141#3242#0" expanded="false" />
-            <element signature="e#4233#7826#0" expanded="false" />
-            <element signature="e#8446#9145#0" expanded="false" />
+            <element signature="e#459#535#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Shoppingcar/Firmorder.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1245">
+        <state relative-caret-position="1102">
           <caret line="76" column="37" lean-forward="false" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
           <folding>
             <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#3793#3869#0" expanded="true" />
+            <element signature="e#3793#3869#0" expanded="false" />
             <element signature="e#5404#5848#0" expanded="false" />
           </folding>
         </state>
@@ -959,32 +730,111 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/TotalCity/TotalSuccess.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1138">
-          <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/src/components/SubmitForm/SubmitForm.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="84" column="31" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="282" column="38" lean-forward="false" selection-start-line="282" selection-start-column="38" selection-end-line="282" selection-end-column="38" />
+        <state relative-caret-position="1392">
+          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3889">
+        <state relative-caret-position="1198">
           <caret line="182" column="14" lean-forward="false" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/servers/server2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="307" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Users/Changepassword.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="272" column="24" lean-forward="false" selection-start-line="272" selection-start-column="24" selection-end-line="272" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Searchunfind.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="137" column="35" lean-forward="false" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
+          <folding>
+            <element signature="e#2253#2315#0" expanded="true" />
+            <element signature="e#3205#3306#0" expanded="false" />
+            <element signature="e#4438#8031#0" expanded="false" />
+            <element signature="e#8651#9350#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Indexcont.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="187" column="26" lean-forward="true" selection-start-line="187" selection-start-column="26" selection-end-line="187" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Header/Headercenter.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="789">
+          <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="500" column="16" lean-forward="false" selection-start-line="500" selection-start-column="16" selection-end-line="500" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/SubmitForm/SubmitForm.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="242" column="18" lean-forward="false" selection-start-line="242" selection-start-column="18" selection-end-line="242" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Index/Countlist.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/src/components/Search/Search.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="155" column="29" lean-forward="false" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
+          <folding>
+            <element signature="e#3245#3841#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friday/servers/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="392" column="13" lean-forward="false" selection-start-line="392" selection-start-column="13" selection-end-line="392" selection-end-column="13" />
           <folding />
         </state>
       </provider>

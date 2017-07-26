@@ -6,8 +6,8 @@
 
     <div class="s-search">
       <div class="s-search-input">
-        <input type="text" placeholder="请输入关键字进行搜索">
-        <a href="#/search" class="iconfont icon-fangdajing"></a>
+        <input type="text" id="search" placeholder="请输入关键字进行搜索">
+        <a href="javascript:void(0)" @click="search" class="iconfont icon-fangdajing"></a>
       </div>
       <div class="s-search-hot">
         <span>热门：</span>
@@ -69,6 +69,28 @@
             }else {
               this.$root.$emit("login",true);
             }
+          },
+          search:function () {
+            var that=this;
+            $.ajax({
+              url:'api/search',
+              type:'get',
+              data:{
+                search:$("#search").val(),
+              },
+              success:function (data) {
+                if(data.err==1){
+                  if(data.list.length>0){
+                    sessionStorage.search=$("#search").val();
+                    that.$router.push({path:'/search'});
+                    location.reload();
+                  }else {
+                    that.$router.push({path:'/searchunfind'});
+                  }
+                }
+              }
+            })
+
           }
         },
         created:function () {

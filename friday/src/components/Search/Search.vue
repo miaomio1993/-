@@ -7,16 +7,16 @@
 				<span>></span>
 				<a href="">全部商品</a>
 				<span>></span>
-				<a href="">苹果</a>
+				<a href="">{{title}}</a>
 			</div>
 			<!--商品排序栏-->
 			<div class="g-order">
 				<div class="g-left">
 					<span>排序：</span>
-					<button class="active1">销量</button>
-					<button>价格从低到高</button>
-					<button>价格从高到底</button>
-					<button>评分最高</button>
+					<button :class="num==1?'active1':''" @click="tab(1)">销量</button>
+					<button :class="num==2?'active1':''" @click="tab(2)">价格从低到高</button>
+					<button :class="num==3?'active1':''" @click="tab(3)">价格从高到底</button>
+					<button :class="num==4?'active1':''" @click="tab(4)">评分最高</button>
 				</div>
 				<div class="g-right">
 					<span>筛选：</span>
@@ -30,8 +30,7 @@
 			<div class="g-goods">
 				<ul v-for="item in itemlist" >
 					<li :style="{backgroundImage:'url('+item.img+')'}">
-						<a href="#/detail">
-
+						<a href="#/detail" @click="goto(item.id)">
               <div class="g-text">
                 <h6>{{item.title}}</h6>
                 <span>{{item.subhead}}</span>
@@ -40,38 +39,38 @@
 						<div class="g-goods-price">
 							<span class="g-price-now">￥{{item.priceNow}}</span>
 							<span class="g-price-old">￥{{item.priceOld}}</span>
-							<span class="iconfont icon-gouwuche"></span>
+							<span class="iconfont icon-gouwuche"  @click="addShoppingcar(item.id)"></span>
 						</div>
 					</li>
 				</ul>
 			</div>
 			<!--底部页面跳转部分-->
-			<div class="g-pages">
+			<!--<div class="g-pages">-->
 				<!--左边跳转栏-->
-				<div class="g-left">
-					<ul class="g-pagination">
-						<li class="g-disabled">
-							<span>上一页</span>
-						</li>
-						<li class="g-ctive">
-							<span>1</span>
-						</li>
-						<li><a href="">2</a></li>
-						<li><a href="">下一页</a></li>
-					</ul>
-				</div>
+				<!--<div class="g-left">-->
+					<!--<ul class="g-pagination">-->
+						<!--<li class="g-disabled">-->
+							<!--<span>上一页</span>-->
+						<!--</li>-->
+						<!--<li class="g-ctive">-->
+							<!--<span>1</span>-->
+						<!--</li>-->
+						<!--<li><a href="">2</a></li>-->
+						<!--<li><a href="">下一页</a></li>-->
+					<!--</ul>-->
+				<!--</div>-->
 				<!--右边跳转栏-->
-				<div class="g-right">
-					<ul class="g-jump">
-						<li>
-							<span>共2页&nbsp;到第</span>
-							<input type="text" class="g-jump-num" value="1"/>
-							<span>页</span>
-							<a href="javascript:void(0)">确定</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+				<!--<div class="g-right">-->
+					<!--<ul class="g-jump">-->
+						<!--<li>-->
+							<!--<span>共2页&nbsp;到第</span>-->
+							<!--<input type="text" class="g-jump-num" value="1"/>-->
+							<!--<span>页</span>-->
+							<!--<a href="javascript:void(0)">确定</a>-->
+						<!--</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</div>-->
 		</div>
 </template>
 <script>
@@ -81,51 +80,95 @@ export default {
   data () {
     return {
       itemlist:[
-        {
-          id:'',
-          title:'新西兰佳沛黄金奇异果',
-          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
-          priceNow:28.80,
-          priceOld:40.00,
-          img:require('./img/index-cont1-1.png'),
-        },
-        {
-          id:'',
-          title:'新西兰佳沛黄金奇异果',
-          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
-          priceNow:28.80,
-          priceOld:40.00,
-          img:require('./img/index-cont1-2.png'),
-        },
-        {
-          id:'',
-          title:'新西兰佳沛黄金奇异果',
-          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
-          priceNow:28.80,
-          priceOld:40.00,
-          img:require('./img/index-cont1-3.png'),
-        },
-        {
-          id:'',
-          title:'新西兰佳沛黄金奇异果',
-          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
-          priceNow:28.80,
-          priceOld:40.00,
-          img:require('./img/index-cont1-4.png'),
-        },
-        {
-          id:'',
-          title:'新西兰佳沛黄金奇异果',
-          subhead:'果肉绵密、花蜜般的甘甜百吃不厌',
-          priceNow:28.80,
-          priceOld:40.00,
-          img:require('./img/index-cont1-4.png'),
-        }
-      ]
+
+      ],
+      title:sessionStorage.search,
+      num:1,
     }
   },
   components:{
     Login
+  },
+  created:function () {
+      var that=this;
+    $.ajax({
+      url:'api/search',
+      type:"get",
+      data:{
+        search:sessionStorage.search,
+      },
+      success:function (data) {
+          if(data.err==1){
+            for(var i=0;i<data.list.length;i++){
+                  var obj={
+                    id:data.list[i].id,
+                    title:data.list[i].name,
+                    subhead:data.list[i].description,
+                    priceNow:data.list[i].newPrice,
+                    priceOld:data.list[i].oldPrice,
+                    img:data.list[i].showImg,
+                  };
+                  that.itemlist.push(obj);
+            }
+          }
+      },
+    })
+  },
+  methods:{
+    goto:function (id) {
+      sessionStorage.goodsId=id;
+    },
+    addShoppingcar:function (id) {
+      var that=this;
+      if(localStorage.userPhone){
+        $.ajax({
+          url:'api/addshoppingcar',
+          type:'get',
+          data:{
+            userPhone:localStorage.userPhone,
+            goodsId:id,
+          },
+          success:function (data) {
+            if(data.err==1){
+              that.$root.$emit("addshoppingcar",1);
+            }else if(data.err==2){
+              var num=data.goods.split("$").length;
+              that.$root.$emit("addshoppingcar",num);
+            }
+          },
+        });
+      }else {
+        this.$root.$emit("login",true);
+      }
+    },
+    tab:function (num) {
+      this.num=num;
+      var that=this;
+      $.ajax({
+        url:'api/searchfilter',
+        type:'get',
+        data:{
+            act:that.num,
+          search:sessionStorage.search
+        },
+        success:function (data) {
+          if(data.err==1){
+            that.itemlist=[];
+            for(var i=0;i<data.list.length;i++){
+              var obj={
+                id:data.list[i].id,
+                title:data.list[i].name,
+                subhead:data.list[i].description,
+                priceNow:data.list[i].newPrice,
+                priceOld:data.list[i].oldPrice,
+                img:data.list[i].showImg,
+              };
+              that.itemlist.push(obj);
+            }
+          }
+        }
+      })
+    }
   }
 }
 </script>
@@ -169,6 +212,7 @@ export default {
 	font-size: 14px;
 	background-color: #fff;
 	border:1px solid gray;
+  cursor: pointer;
 }
 .g-order>.g-left>.active1{
 	border:1px solid #498e3d;
@@ -212,6 +256,8 @@ export default {
 	margin:0 20px 20px 0;
 	border:1px solid gray;
 	border-radius: 3px;
+  background-size:303px auto ;
+  background-repeat: no-repeat;
 }
 /*利用容器包容器，超出隐藏的原理实现效果
 --设置一个小容器，里面包裹一个大容器，超出小容器的隐藏，即可省去下面这组样式*/

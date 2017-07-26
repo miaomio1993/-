@@ -194,7 +194,7 @@
                 that.count1.itemlist[i].subhead=data[i].description;
                 that.count1.itemlist[i].priceNow=data[i].newPrice;
                 that.count1.itemlist[i].priceOld=data[i].oldPrice;
-                that.count1.itemlist[i].img=require("./img/"+data[i].showImg);
+                that.count1.itemlist[i].img=data[i].showImg;
               }
             },
           });

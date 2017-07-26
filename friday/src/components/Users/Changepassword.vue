@@ -7,7 +7,7 @@
 				<input type="password" placeholder="请输入密码（6-20位号码字符）" v-model="password" class="passWord"/>
 				<input type="password" placeholder="请再次输入密码确认" v-model="again" class="repassword"/>
 				<div class="z-yanzhengma">
-					<input type="text" placeholder="验证码"/>
+					<input type="text" placeholder="验证码" class="yanzhengma"/>
 
           <div>
             <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
