@@ -1,15 +1,22 @@
-v<template>
-	<div class="g-success-box">
-			<div class="g-box">
-				<img src="./images/total-success.png" alt="" />
-				<strong>支付成功</strong>
-				<div class="g-btn">
-					<button>查看订单</button>
-					<button>返回首页</button>
-				</div>
-				<span>订单编号：20150901144912ah4941</span>
-			</div>
-		</div>
+<template>
+  <div>
+    <div class="header">
+      <a href="#/"><img src="./images/logo.png" alt=""></a>
+
+    </div>
+
+    <div class="g-success-box">
+      <div class="g-box">
+        <img src="./images/total-success.png" alt="" />
+        <strong>支付成功</strong>
+        <div class="g-btn">
+          <button @click="gotoorder">查看订单</button>
+          <button @click="gotoindex">返回首页</button>
+        </div>
+        <span>订单编号：20150901144912894941</span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,12 +24,25 @@ export default {
   name: 'hello',
   data () {
     return {}
+  },
+  methods:{
+      gotoindex:function () {
+        this.$router.push({path:'/'});
+      },
+      gotoorder:function () {
+        this.$router.push({path:'/myorder'});
+      }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .header{
+    width: 100%;
+    height: 130px;
+    border-bottom: 1px solid #e4e4e4;
+  }
 .g-success-box{
 	position: relative;
 	height: 519px;

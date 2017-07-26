@@ -1,56 +1,46 @@
 <template>
+  <div>
+    <shoppingcarhead :num="3"></shoppingcarhead>
+
 	<div class="g-content">
 			<div class="g-content-success">
-				<img src="images/total-success.png" alt="" />
+				<img src="./images/total-success.png" alt="" />
 				<p>订单已提交，请于24小时内完成支付<span>（逾期订单将被取消）</span></p>
 			</div>
 			<div class="g-content-address">
 				<strong class="iconfont icon-dizhi"></strong>
-				<span>送货至：但小兵&nbsp;北京&nbsp;北京市&nbsp;昌平区&nbsp;天通苑明天第一城4号楼101&nbsp;固定电话010-12345678</span>
+				<span>送货至：秋天先森&nbsp;河南省&nbsp;郑州市&nbsp;高新区&nbsp;莲花街与牡丹路交叉口&nbsp;手机 15890343735</span>
 			</div>
 			<div class="g-content-money">
 				<div class="g-money-top">
-					<p>应付金额：<strong>165.90</strong>（在线支付）</p>
+					<p>应付金额：<strong>{{total}}</strong>（在线支付）</p>
 					<span class="g-money-num">订单编号：425954156947</span>
 					<span class="g-money-way">支付平台</span>
 				</div>
-				<ul class="g-money-center">
-					<li>
-						<span ><em class="active"></em></span>
-						<div class="g-center-pay">
-							<img src="images/支付宝-pay.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<span><em></em></span>
-						<div class="g-center-pay">
-							<img src="images/微信-pay.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<span><em></em></span>
-						<div class="g-center-pay">
-							<img src="images/bank-pay.png" alt="" />
-						</div>
-					</li>
-					<li>
-						<span><em></em></span>
-						<div class="g-center-pay">
-							<img src="images/余额-pay.png" alt="" />
-						</div>
-					</li>
-				</ul>
+        <ul class="g-money-center">
+          <li><input id="pay1" type="radio" name="pay">
+            <label for="pay1"><img src="./images/支付宝-pay.png" alt="" /></label></li>
+          <li>
+            <input id="pay2" type="radio" name="pay">
+            <label for="pay2"><img src="./images/微信-pay.png" alt="" /></label></li>
+          <li>
+            <input id="pay3" type="radio" name="pay">
+            <label for="pay3"><img src="./images/bank-pay.png" alt="" /></label></li>
+          <li>
+            <input id="pay4" type="radio" name="pay">
+            <label for="pay4"><img src="./images/余额-pay.png" alt="" /></label></li>
+        </ul>
 
 				<div class="g-money-bottom1">
 					<div class="g-bottom-top">
 						<div class="g-left">
 							<span>使用电脑支付</span>
-							<img src="images/电脑支付.png" alt="" />
-							<button>立即支付</button>
+							<img src="./images/电脑支付.png" alt="" />
+							<button @click="pay">立即支付</button>
 						</div>
 						<div class="g-right">
 							<span>使用支付宝钱包扫一扫付款</span>
-							<img src="images/支付宝二维码.png" alt="" />
+							<img src="./images/支付宝二维码.png" alt="" />
 						</div>
 					</div>
 				</div>
@@ -58,24 +48,40 @@
 				<div class="g-money-bottom2">
 					<div class="g-bottom-top">
 						<div class="g-left">
-							<img src="images/手机支付.png" alt="" />
+							<img src="./images/手机支付.png" alt="" />
 						</div>
 						<div class="g-right">
 							<span>使用微信扫一扫付款</span>
-							<img src="images/支付宝二维码.png" alt="" />
+							<img src="./images/支付宝二维码.png" alt="" />
 						</div>
 					</div>
 				</div>
 			</div>
 
 		</div>
+  </div>
 </template>
 
 <script>
+  import Shoppingcarhead from "@/components/Shoppingcar/Shoppingcar-head.vue";
 export default {
-  name: 'hello',
+  name: 'submitform',
+
   data () {
-    return {}
+    return {
+        total:0,
+    }
+  },
+  components:{
+    Shoppingcarhead
+  },
+  created:function () {
+    this.total=sessionStorage.total;
+  },
+  methods:{
+    pay:function () {
+      this.$router.push({path:"/paysuccess"})
+    }
   }
 }
 </script>
@@ -109,11 +115,10 @@ export default {
 }
 .g-content>.g-content-address{
 	height: 38px;
-	width: 1280px;
+	width: 1278px;
 	margin: 0 auto;
 	background-color: #f4fff2;
-	border-top:1px solid gray;
-	border-bottom: 1px solid gray;
+  border: 1px solid #e5e5e5;
 }
 .g-content>.g-content-address>strong{
 	display: inline-block;
@@ -136,7 +141,7 @@ export default {
 	position: relative;
 	height: 110px;
 	padding-top:35px;
-	border-bottom:1px solid gray;
+	border-bottom:1px solid #e3e3e3;
 }
 .g-content-money>.g-money-top>p{
 	position: absolute;
@@ -164,63 +169,46 @@ export default {
 	color: #707070;
 }
 /*支付方式*/
-.g-content>.g-content-money>.g-money-center{
-	height: 88px;
-	width: 1280px;
-	/*border-bottom:1px solid gray;*/
+.g-money-center {
+  height: 119px;
+  width: 1280px;
+  /*border-bottom:1px solid gray;*/
 }
-.g-content-money>.g-money-center>li{
-	position: relative;
-	display: inline-block;
-	margin-top: 40px;
-	margin-right: 40px;
-	width: 200px;
-	background: red;
+.g-money-center>li {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  margin: 40px 0;
+  width: 160px;
+  margin-right: 45px;
 }
-.g-content-money>.g-money-center>li>span{
-	position: absolute;
-	top: 10px;
-	left: 0;
-	width: 18px;
-	height: 18px;
-	border-radius:50%;
-	border:1px solid #1d76c7;
+.g-money-center>li>input {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 0;
+  margin-top: -7px;
 }
-.g-money-center>li>span>em{
-	position: absolute;
-	top: 4px;
-	left: 5px;
-	width: 9px;
-	height: 9px;
-	border-radius:50%;
-	background-color: white;
+.g-money-center>li>label {
+  position: absolute;
+  left: 30px;
+  height: 38px;
+  width: 128px;
+  margin-left: 10px;
+  margin: 0;
+  border: 1px solid gray;
 }
-.g-money-center>li>span>.active{
-	background-color: #1d76c7;
-}
-.g-money-center>li>.g-center-pay{
-	position: absolute;
-	top: 0;
-	left: 30px;
-	width: 133px;
-	height: 40px;
-	border:1px solid lightgray;
-}
-.g-money-center>li>.g-center-pay>img{
-	width: 100%;
-	height: 100%;
-}
-.g-money-center>li>.g-center-pay>img:nth-child(4){
-	padding: 5px;
-	width: 100%;
-	height: 100%;
+.g-money-center>li>label>img {
+  width: 100%;
+  height: 100%;
 }
 
 /**/
 .g-content>.g-content-money>.g-money-bottom1{
 	width: 1278px;
 	height: 400px;
-	margin-top: 40px;
+	/*margin-top: 40px;*/
 	border:1px solid lightgray;
 
 }

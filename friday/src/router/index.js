@@ -56,6 +56,8 @@ import Special from '@/components/Special/Special'
 import Shoppingcar from '@/components/Shoppingcar/Shoppingcar'
 
 import Firmorder from '@/components/Shoppingcar/Firmorder'
+import SubmitForm from '@/components/SubmitForm/SubmitForm'
+import TotalSuccess from '@/components/totalCity/TotalSuccess'
 
 Vue.use(Router)
 
@@ -265,6 +267,16 @@ export default new Router({
           path: '/firmorder',
           name: 'Firmorder',
           component: Firmorder,
+        },
+        {
+          path: '/submitform',
+          name: 'SubmitForm',
+          component: SubmitForm,
+        },
+        {
+          path: '/paysuccess',
+          name: 'TotalSuccess',
+          component: TotalSuccess,
         },
         {
           path: '/register',
