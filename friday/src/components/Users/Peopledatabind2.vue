@@ -8,34 +8,131 @@
 					<p>验证原手机号<span></span><i></i></p>
 					<p>验证原手机号</p>
 				</li>
-				<li>
-					<input type="text" name="" id="" value="" />
-				</li>
-				<li>
-					<input type="text"  placeholder="验证码"/>
-					<img src="./img/changepassword1.png" alt="" />
-					<button>看不清换一张</button>
-				</li>
-				<li>
-					<input type="text" placeholder="输入密码验证身份"/>
-					<button>获取验证码</button>
-				</li>
-				<li>
-					<a href="#/peopledatabind3">提交验证</a>
-				</li>
-			</ul>
+        <li>
+          <input type="text" name="" id="" value="" class="userPhone" placeholder="请输入原手机号"/>
+        </li>
+        <li>
+          <input type="text"  placeholder="验证码" class="yanzhengma"/>
+          <div>
+            <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
+          </div>
+          <button  @click="submit">看不清换一张</button>
+        </li>
+        <li>
+          <input type="text" placeholder="输入密码验证身份"/>
+        </li>
+        <li>
+          <a href="javascript:void (0)" @click="change">提交验证</a>
+        </li>
+      </ul>
 		</div>
 	</div>
 </template>
 
 <script>
+  export default{
+    data(){
+      return{
+        first:parseInt(Math.random(0,1)*10),
+        two:parseInt(Math.random(0,1)*10),
+        three:parseInt(Math.random(0,1)*10),
+        four:parseInt(Math.random(0,1)*10),
+        num1:parseInt(Math.random(0,1)*120),
+        num2:parseInt(Math.random(0,1)*5),
+        num3:parseInt(Math.random(0,1)*100),
+        num4:parseInt(Math.random(0,1)*5),
+        num5:parseInt(Math.random(0,1)*80),
+        num6:parseInt(Math.random(0,1)*5),
+        num7:parseInt(Math.random(0,1)*60),
+        num8:parseInt(Math.random(0,1)*5),
+        color1:"",
+        color2:"",
+        color3:"",
+        color4:"",
+        randnum1:parseInt(Math.random(0,1)*900),
+        randnum2:parseInt(Math.random(0,1)*900),
+        randnum3:parseInt(Math.random(0,1)*900),
+        randnum4:parseInt(Math.random(0,1)*900)
+      }
+    },
+    created:function () {
+      this.color1=this.randomColor()
+      this.color2=this.randomColor()
+      this.color3=this.randomColor()
+      this.color4=this.randomColor()
+    }
+    ,
+    methods:{
+      randomNumber:function (a,b) {
+        return parseInt(Math.random()*(b-a+1)+a)
+      },
+      randomColor:function () {
+        return "rgb("+this.randomNumber(0,255)+","+this.randomNumber(0,255)+","+this.randomNumber(0,255)+")"
+      },
+      submit:function () {
+        this.first=parseInt(Math.random(0,1)*10);
+        this.two=parseInt(Math.random(0,1)*10);
+        this.three=parseInt(Math.random(0,1)*10);
+        this.four=parseInt(Math.random(0,1)*10);
+        this.num1=parseInt(Math.random(0,1)*120);
+        this.num2=parseInt(Math.random(0,1)*5);
+        this.num3=parseInt(Math.random(0,1)*100);
+        this.num4=parseInt(Math.random(0,1)*5);
+        this.num5=parseInt(Math.random(0,1)*80);
+        this.num6=parseInt(Math.random(0,1)*5);
+        this.num7=parseInt(Math.random(0,1)*60);
+        this.num8=parseInt(Math.random(0,1)*5);
+        this.color1=this.randomColor();
+        this.color2=this.randomColor();
+        this.color3=this.randomColor();
+        this.color4=this.randomColor();
+        this.randnum1=parseInt(Math.random(0,1)*900);
+        this.randnum2=parseInt(Math.random(0,1)*900);
+        this.randnum3=parseInt(Math.random(0,1)*900);
+        this.randnum4=parseInt(Math.random(0,1)*900)
+
+      },
+      change:function(){
+        var that=this;
+        var yanzhengma=this.first+""+this.two+this.three+this.four
+        if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+          this.turn = true
+          alert("输入号码有误")
+        }else{
+
+          this.$root.$emit("listen","会员登录")
+          $.ajax({
+            url:"api/confirm",
+            type:"get",
+            data:{
+              userPhone: $(".userPhone").val()
+            },
+            success:function (data) {
+              if (data.err==1){
+                if($(".yanzhengma").val()==yanzhengma){
+                  localStorage.userPhone = $(".userPhone").val();
+                  window.location.href = "#/peopledatabind3"
+                  that.$root.$emit("userReg","1")
+                }else {
+                  alert("验证码有误")
+                }
+
+              }else {
+                alert("不存在此号码")
+              }
+            }
+          })
+
+        }}
+    }
+  }
 </script>
 
 <style scoped>
 .z-bind{
 width: 1077px;
 border: 1px solid #e3e3e3;
-}	
+}
 .z-bind>h2{
   line-height: 60px;
   font-size: 20px;
@@ -155,6 +252,22 @@ border: 1px solid #e3e3e3;
 	display: inline-block;
 	text-align: center;
 	line-height: 50px;
+}
+.z-cont>li:nth-child(3)>div{
+  display: inline-block;
+  position: relative;
+  height: 34px;
+  width: 79px;
+  background-image: url("./img/changepassword4.jpg");
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.z-cont>li:nth-child(3)>div>span{
+  color: white;
+  padding: 0 5px;
+  line-height: 34px;
+  opacity: 0.8;
+  display: inline-block;
 }
 
 

@@ -9,10 +9,10 @@
 					<p>验证原手机号</p>
 				</li>
 				<li>
-					<input type="text" name="" id="" value="" />
+					<input type="text" name="" id="" value="" class="userPhone" placeholder="请输入原手机号"/>
 				</li>
 				<li>
-					<input type="text"  placeholder="验证码"/>
+					<input type="text"  placeholder="验证码" class="yanzhengma"/>
           <div>
             <span :style="'transform:translate('+num2+'px) rotate('+num1+'deg);color:'+color1+';font-weight:'+randnum1">{{first}}</span><span :style="'transform:translate('+num4+'px) rotate('+num3+'deg);color:'+color2+';font-weight:'+randnum2">{{two}}</span><span :style="'transform:translate('+num6+'px) rotate('+num5+'deg);color:'+color3+';font-weight:'+randnum3">{{three}}</span><span :style="'transform:translate('+num8+'px) rotate('+num7+'deg);color:'+color4+';font-weight:'+randnum4">{{four}}</span>
           </div>
@@ -22,7 +22,7 @@
 					<input type="text" placeholder="输入密码验证身份"/>
 				</li>
 				<li>
-					<a href="#/peopledatabind2">提交验证</a>
+					<a href="javascript:void (0)" @click="change">提交验证</a>
 				</li>
 			</ul>
 		</div>
@@ -91,7 +91,38 @@
             this.randnum3=parseInt(Math.random(0,1)*900);
             this.randnum4=parseInt(Math.random(0,1)*900)
 
-          }
+          },
+        change:function(){
+          var that=this;
+          var yanzhengma=this.first+""+this.two+this.three+this.four
+          if (!(/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+            this.turn = true
+            alert("输入号码有误")
+          }else{
+            this.$root.$emit("listen","会员登录")
+            $.ajax({
+              url:"api/confirm",
+              type:"get",
+              data:{
+                userPhone: $(".userPhone").val()
+              },
+              success:function (data) {
+                if (data.err==1){
+                  if($(".yanzhengma").val()==yanzhengma){
+                    localStorage.userPhone = $(".userPhone").val();
+                    window.location.href = "#/peopledatabind2"
+                    that.$root.$emit("userReg","1")
+                  }else {
+                    alert("验证码有误")
+                  }
+
+                }else {
+                  alert("不存在此号码")
+                }
+              }
+            })
+
+          }}
       }
   }
 </script>

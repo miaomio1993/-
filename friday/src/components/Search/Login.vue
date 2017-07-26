@@ -9,8 +9,8 @@
         </p>
       </li>
       <li>
-        <input type="number" placeholder="请输入手机号" class="userPhone"/>
-        <span class="iconfont icon-duigou"></span>
+        <input type="number" placeholder="请输入手机号" class="userPhone" @blur="change5"/>
+        <span class="iconfont icon-duigou" v-if="turn5"></span>
       </li>
       <li>
         <p v-if="turn"><span >！</span>手机号码不正确，请重新输入</p>
@@ -57,6 +57,7 @@
       return{
         turn:false,
         turn1:true,
+        turn5:false,
         first:parseInt(Math.random(0,1)*10),
         two:parseInt(Math.random(0,1)*10),
         three:parseInt(Math.random(0,1)*10),
@@ -114,6 +115,16 @@
         this.randnum2=parseInt(Math.random(0,1)*900);
         this.randnum3=parseInt(Math.random(0,1)*900);
         this.randnum4=parseInt(Math.random(0,1)*900)
+
+      },
+      change5:function () {
+
+        if ((/^1[34578]\d{9}$/.test($(".userPhone").val()))) {
+          this.turn5 = true
+        } else{
+          this.turn5 = false
+          alert("手机号有误")
+        }
 
       },
       change:function(){
