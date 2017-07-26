@@ -278,8 +278,11 @@ app.get('/shoppingcar',function (req, res) {
   var userPhone=req.query.userPhone;
   link.query("SELECT * FROM shoppingcar WHERE userPhone="+userPhone,function (err,rows,fields) {
     if (act=='num'){
-      var goods=rows[0].goods;
-      res.send({err:1,goods:goods});
+      if(rows.length>0){
+        var goods=rows[0].goods;
+        res.send({err:1,goods:goods});
+      }
+
     }
   });
 });
@@ -290,6 +293,15 @@ app.get('/shopingcarDel',function (req, res) {
   link.query("UPDATE shoppingcar SET goods='"+goods+"' WHERE userPhone="+userPhone,function (err,result) {
     if (!err){
     res.send({err:1});
+    }
+  });
+});
+
+app.get('/delshoppingcar',function (req, res) {
+  var userPhone=req.query.userPhone;
+  link.query("DELETE FROM shoppingcar where userPhone="+userPhone,function (err,result) {
+    if (!err){
+      res.send({err:1});
     }
   });
 });

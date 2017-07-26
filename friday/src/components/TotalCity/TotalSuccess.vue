@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="header">
-      <a href="#/"><img src="./images/logo.png" alt=""></a>
+      <div class="logo">
+        <a href="#/"><img src="./images/logo.png" alt=""></a>
+      </div>
+
 
     </div>
 
@@ -41,14 +44,25 @@ export default {
   .header{
     width: 100%;
     height: 130px;
-    border-bottom: 1px solid #e4e4e4;
+    border-bottom: 2px solid #e4e4e4;
+  }
+  .logo{
+    width: 1280px;
+    margin: 0 auto;
+    line-height: 130px;
+  }
+  .logo>a{
+    display: inline-block;
+  }
+  .logo>a>img{
+    margin-top: 30px;
   }
 .g-success-box{
 	position: relative;
 	height: 519px;
 	width: 1280px;
 	margin: 0 auto;
-	border-bottom:1px solid gray;
+	/*border-bottom:1px solid gray;*/
 }
 .g-success-box>.g-box{
 	padding: 80px 0 100px 0;

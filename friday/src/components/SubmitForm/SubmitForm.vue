@@ -80,7 +80,20 @@ export default {
   },
   methods:{
     pay:function () {
-      this.$router.push({path:"/paysuccess"})
+      var that=this;
+      $.ajax({
+        url:'api/delshoppingcar',
+        type:'get',
+        data:{
+            userPhone:localStorage.userPhone
+        },
+        success:function (data) {
+          if (data.err==1){
+            that.$router.push({path:"/paysuccess"})
+          }
+        }
+      })
+
     }
   }
 }
