@@ -57,7 +57,7 @@ import Shoppingcar from '@/components/Shoppingcar/Shoppingcar'
 
 import Firmorder from '@/components/Shoppingcar/Firmorder'
 import SubmitForm from '@/components/SubmitForm/SubmitForm'
-import TotalSuccess from '@/components/totalCity/TotalSuccess'
+import TotalSuccess from '@/components/TotalCity/TotalSuccess.vue'
 
 Vue.use(Router)
 
