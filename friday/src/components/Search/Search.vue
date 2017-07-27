@@ -148,7 +148,7 @@ export default {
         url:'api/searchfilter',
         type:'get',
         data:{
-            act:that.num,
+          act:that.num,
           search:sessionStorage.search
         },
         success:function (data) {

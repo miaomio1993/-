@@ -37,7 +37,7 @@
 			<li>
 			</li>
 			<li>
-				<a href="javascript:void(0)" v-on:click="change">登录</a>
+				<a href="javascript:void(0)" v-on:click="change">密码重置</a>
 				<a href="#/applyfor" v-on:click="change1">会员注册</a>
 			</li>
 		</ul>
@@ -142,11 +142,11 @@
                   type:"get",
                   data:{
                     userPhone:$(".userPhone").val(),
-                    passWord:that.password
+                    passWord:$(".passWord").val(),
                   },
                   success:function (data) {
                     if (data.err==1){
-                      window.location.href = "#/phoneconfirm"
+                      window.location.href = "#/numberpassword"
                       setTimeout(function () {
                         that.phone="";
                         that.password="";

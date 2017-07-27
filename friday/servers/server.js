@@ -309,6 +309,7 @@ app.get("/detail",function (req, res) {
       detail:rows[0].detail,
       imglist:rows[0].detailImg.split("$"),
       name:rows[0].name,
+      description:rows[0].description,
     };
     res.send(data);
   });
@@ -332,6 +333,39 @@ app.get("/addshoppingcar",function (req, res) {
           res.send({err:2,goods:goods});
         }
       });
+    }
+  });
+});
+
+app.get("/collect",function (req, res) {
+  var userPhone=req.query.userPhone;
+  var goodsId=req.query.goodsId;
+  link.query("SELECT * FROM collection WHERE userPhone="+userPhone,function (err,rows,fields) {
+    if(rows.length==0){
+      link.query("INSERT INTO collection(userPhone,goods) VALUES("+userPhone+", "+goodsId+")",function (err,result) {
+        if(!err){
+          res.send({err:1});
+        }
+      })
+    }else {
+      var goods=rows[0].goods+"$"+goodsId;
+      link.query("UPDATE collection SET goods='"+goods+"' WHERE userPhone="+userPhone,function (err,result) {
+        if(!err){
+          res.send({err:1});
+        }
+      });
+    }
+  });
+});
+
+app.get('/mycollect',function (req, res) {
+  var userPhone=req.query.userPhone;
+  link.query("SELECT * FROM collection WHERE userPhone="+userPhone,function (err,rows,fields) {
+    if (!err){
+      if(rows.length>0){
+        var goods=rows[0].goods;
+        res.send({err:1,goods:goods});
+      }
     }
   });
 });

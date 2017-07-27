@@ -23,59 +23,59 @@
     data(){
       return{
         items:[
-          {
-            imgs:require("./img/lately1.png"),
-            p1:"新西兰佳沛黄金奇异果",
-            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
-            newcost:"¥28.8",
-            oldcost:"¥41.00",
-            movehiddren:"取消收藏"
-          },
-          {
-            imgs:require("./img/lately1.png"),
-            p1:"新西兰佳沛黄金奇异果",
-            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
-            newcost:"¥28.8",
-            oldcost:"¥42.00",
-            movehiddren:"取消收藏"
-
-          },
-          {
-            imgs:require("./img/lately1.png"),
-            p1:"新西兰佳沛黄金奇异果",
-            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
-            newcost:"¥28.8",
-            oldcost:"¥43.00",
-            movehiddren:"取消收藏"
-
-          },
-          {
-            imgs:require("./img/lately1.png"),
-            p1:"新西兰佳沛黄金奇异果",
-            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
-            newcost:"¥28.8",
-            oldcost:"¥44.00",
-            movehiddren:"取消收藏"
-
-          },
-          {
-            imgs:require("./img/lately1.png"),
-            p1:"新西兰佳沛黄金奇异果",
-            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
-            newcost:"¥28.8",
-            oldcost:"¥45.00",
-            movehiddren:"取消收藏"
-
-          },
-          {
-            imgs:require("./img/lately1.png"),
-            p1:"新西兰佳沛黄金奇异果",
-            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
-            newcost:"¥28.8",
-            oldcost:"¥46.00",
-            movehiddren:"取消收藏"
-
-          },
+//          {
+//            imgs:require("./img/lately1.png"),
+//            p1:"新西兰佳沛黄金奇异果",
+//            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
+//            newcost:"¥28.8",
+//            oldcost:"¥41.00",
+//            movehiddren:"取消收藏"
+//          },
+//          {
+//            imgs:require("./img/lately1.png"),
+//            p1:"新西兰佳沛黄金奇异果",
+//            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
+//            newcost:"¥28.8",
+//            oldcost:"¥42.00",
+//            movehiddren:"取消收藏"
+//
+//          },
+//          {
+//            imgs:require("./img/lately1.png"),
+//            p1:"新西兰佳沛黄金奇异果",
+//            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
+//            newcost:"¥28.8",
+//            oldcost:"¥43.00",
+//            movehiddren:"取消收藏"
+//
+//          },
+//          {
+//            imgs:require("./img/lately1.png"),
+//            p1:"新西兰佳沛黄金奇异果",
+//            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
+//            newcost:"¥28.8",
+//            oldcost:"¥44.00",
+//            movehiddren:"取消收藏"
+//
+//          },
+//          {
+//            imgs:require("./img/lately1.png"),
+//            p1:"新西兰佳沛黄金奇异果",
+//            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
+//            newcost:"¥28.8",
+//            oldcost:"¥45.00",
+//            movehiddren:"取消收藏"
+//
+//          },
+//          {
+//            imgs:require("./img/lately1.png"),
+//            p1:"新西兰佳沛黄金奇异果",
+//            p2:"果肉绵密，花蜜般的甘甜百吃不厌",
+//            newcost:"¥28.8",
+//            oldcost:"¥46.00",
+//            movehiddren:"取消收藏"
+//
+//          },
         ]
       }
     },
@@ -86,6 +86,40 @@
       remove:function (index) {
         this.items.splice(index,1)
       }
+    },
+    created:function () {
+      var that=this;
+      $.ajax({
+        url:'api/mycollect',
+        type:'get',
+        data:{
+          userPhone:localStorage.userPhone,
+        },
+        success:function (data) {
+          var arr=data.goods.split('$');
+          that.items=[];
+          for(var i=0;i<arr.length;i++){
+            $.ajax({
+              url:'api/detail',
+              type:'get',
+              data:{
+                id:arr[i],
+              },
+              success:function (data) {
+
+                that.items.push({
+                  imgs:data.imglist[0],
+                  p1:data.name,
+                  p2:data.description,
+                  newcost:data.newPrice,
+                  oldcost:data.oldPrice,
+                  movehiddren:"取消收藏"
+                })
+              }
+            })
+          }
+        }
+      })
     }
   }
 </script>
@@ -118,6 +152,9 @@ border: 1px solid #e3e3e3;
 	margin-bottom: 20px;
 	text-align: center;
 	position: relative;
+}
+.z-myhiddren>ul>li>img{
+  width: 303px;
 }
 .z-myhiddren>ul>li>p{
 	text-align: left;

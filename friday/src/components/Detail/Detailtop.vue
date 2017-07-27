@@ -51,12 +51,12 @@
         <div class="s-price">
           <span>现价：￥{{newprice}}</span><i>原价：￥{{oldprice}}</i>
         </div>
-        <div class="s-kind1">
-          请选择规格<span @click="changeKind1(index)" :class="indexs1==index?'s-select1':''" v-for="(item,index) in kind1">{{item}}g</span>
-        </div>
-        <div class="s-kind1">
-          请选择规格<span @click="changeKind2(index)" :class="indexs2==index?'s-select2':''" v-for="(item,index) in kind2">{{item}}g</span>
-        </div>
+        <!--<div class="s-kind1">-->
+          <!--请选择规格<span @click="changeKind1(index)" :class="indexs1==index?'s-select1':''" v-for="(item,index) in kind1">{{item}}g</span>-->
+        <!--</div>-->
+        <!--<div class="s-kind1">-->
+          <!--请选择规格<span @click="changeKind2(index)" :class="indexs2==index?'s-select2':''" v-for="(item,index) in kind2">{{item}}g</span>-->
+        <!--</div>-->
         <div class="s-choose">
           <div class="s-selectNum">
             数量：<button @click="reduce">-</button><input v-model="buyNum" type="number"><button @click="add">+</button>件
@@ -180,6 +180,22 @@
           },
           collects:function () {
             this.collect=!this.collect;
+            var that=this;
+            if(localStorage.userPhone){
+              $.ajax({
+                url:'api/collect',
+                type:'get',
+                data:{
+                  userPhone:localStorage.userPhone,
+                  goodsId:that.id,
+                },
+                success:function (data) {
+
+                },
+              });
+            }else {
+              this.$root.$emit("login",true);
+            }
           }
         },
         created:function () {
